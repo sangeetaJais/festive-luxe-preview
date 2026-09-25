@@ -1,0 +1,96 @@
+import { BUSINESS_PHONE, INSTAGRAM_URL } from '../data/products'
+import { InstagramIcon, PhoneIcon } from './icons'
+
+export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
+  return (
+    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-cream/90 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-4 sm:gap-6">
+          <a
+            href="#collection"
+            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-charcoal/70 transition hover:text-charcoal sm:flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="h-3.5 w-3.5"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 12h15m0 0-5.25-5.25M19.5 12l-5.25 5.25"
+              />
+            </svg>
+            Shop
+          </a>
+          <button
+            type="button"
+            onClick={onOpenLocation}
+            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-charcoal/70 transition hover:text-charcoal md:flex"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="h-3.5 w-3.5"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+              />
+            </svg>
+            {checkoutUnlocked ? 'Area Set' : 'Delivery'}
+          </button>
+        </div>
+
+        <a href="#top" className="text-center">
+          <span className="block font-serif text-2xl font-normal tracking-[0.35em] text-charcoal sm:text-3xl">
+            ZELVORA
+          </span>
+          <span className="mt-0.5 block text-[9px] font-medium uppercase tracking-[0.42em] text-gold">
+            Lifestyle Collective
+          </span>
+        </a>
+
+        <div className="flex items-center gap-2 sm:gap-4">
+          <a
+            href="#about"
+            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-charcoal/70 transition hover:text-charcoal lg:flex"
+          >
+            About
+          </a>
+
+          <span className="flex items-center gap-2 rounded-full border border-charcoal/15 px-2.5 py-2 text-charcoal sm:px-3">
+            <PhoneIcon className="h-3.5 w-3.5" />
+            <span className="hidden text-[10px] font-medium tracking-[0.12em] text-charcoal/70 sm:inline">
+              {BUSINESS_PHONE.display}
+            </span>
+          </span>
+
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow Zelvora Lifestyle on Instagram @zelvora_lifestyle"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-charcoal/15 text-charcoal transition hover:border-gold hover:text-gold"
+          >
+            <InstagramIcon className="h-4 w-4" />
+          </a>
+        </div>
+      </nav>
+    </header>
+  )
+}
