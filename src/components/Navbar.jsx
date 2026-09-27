@@ -3,12 +3,12 @@ import { InstagramIcon, PhoneIcon } from './icons'
 
 export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-cream/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#2C2C2C]/10 bg-cream">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 sm:gap-6">
           <a
             href="#collection"
-            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-charcoal/70 transition hover:text-charcoal sm:flex"
+            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/70 transition hover:text-[#2C2C2C] sm:flex"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
           <button
             type="button"
             onClick={onOpenLocation}
-            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-charcoal/70 transition hover:text-charcoal md:flex"
+            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/70 transition hover:text-[#2C2C2C] md:flex"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,10 +57,10 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
         </div>
 
         <a href="#top" className="text-center">
-          <span className="block font-serif text-2xl font-normal tracking-[0.35em] text-charcoal sm:text-3xl">
+          <span className="block font-serif text-2xl font-normal tracking-[0.35em] text-[#2C2C2C] sm:text-3xl">
             ZELVORA
           </span>
-          <span className="mt-0.5 block text-[9px] font-medium uppercase tracking-[0.42em] text-gold">
+          <span className="mt-0.5 block text-[9px] font-medium uppercase tracking-[0.42em] text-[#C5A880]">
             Lifestyle Collective
           </span>
         </a>
@@ -68,14 +68,14 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
         <div className="flex items-center gap-2 sm:gap-4">
           <a
             href="#about"
-            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-charcoal/70 transition hover:text-charcoal lg:flex"
+            className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/70 transition hover:text-[#2C2C2C] lg:flex"
           >
             About
           </a>
 
-          <span className="flex items-center gap-2 rounded-full border border-charcoal/15 px-2.5 py-2 text-charcoal sm:px-3">
+          <span className="flex items-center gap-2 rounded-full border border-[#2C2C2C]/15 px-2.5 py-2 text-[#2C2C2C] sm:px-3">
             <PhoneIcon className="h-3.5 w-3.5" />
-            <span className="hidden text-[10px] font-medium tracking-[0.12em] text-charcoal/70 sm:inline">
+            <span className="hidden text-[10px] font-medium tracking-[0.12em] text-[#2C2C2C]/70 sm:inline">
               {BUSINESS_PHONE.display}
             </span>
           </span>
@@ -85,7 +85,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Follow Zelvora Lifestyle on Instagram @zelvora_lifestyle"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-charcoal/15 text-charcoal transition hover:border-gold hover:text-gold"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#2C2C2C]/15 text-[#2C2C2C] transition hover:border-[#C5A880] hover:text-[#C5A880]"
           >
             <InstagramIcon className="h-4 w-4" />
           </a>

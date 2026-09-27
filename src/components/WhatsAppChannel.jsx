@@ -18,31 +18,22 @@ export default function WhatsAppChannel() {
   return (
     <section
       aria-labelledby="whatsapp-channel-heading"
-      className="border-t border-charcoal/10 bg-cream"
+      className="border-t border-[#2C2C2C]/10 bg-cream"
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-        <div className="relative overflow-hidden border border-charcoal/10 bg-white">
-          <div
-            className="pointer-events-none absolute inset-0 opacity-60"
-            style={{
-              backgroundImage:
-                'radial-gradient(ellipse 70% 80% at 0% 50%, rgba(197,168,128,0.18), transparent), radial-gradient(ellipse 50% 60% at 100% 50%, rgba(44,44,44,0.04), transparent)',
-            }}
-            aria-hidden="true"
-          />
-
+        <div className="relative overflow-hidden border border-[#2C2C2C]/10 bg-white">
           <div className="relative flex flex-col items-start justify-between gap-8 px-6 py-8 sm:px-10 sm:py-10 md:flex-row md:items-center">
             <div className="max-w-2xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-gold">
+              <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-[#C5A880]">
                 Style Circle
               </p>
               <h2
                 id="whatsapp-channel-heading"
-                className="mt-3 font-serif text-2xl leading-snug text-charcoal sm:text-3xl text-balance"
+                className="mt-3 font-serif text-2xl leading-snug text-[#2C2C2C] sm:text-3xl text-balance"
               >
-                ✨ Stay Ahead of the Trends!
+                Stay Ahead of the Trends
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-charcoal/65 sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-[#2C2C2C]/65 sm:text-base">
                 Join our Exclusive ZELVORA Style Circle on WhatsApp Channel for
                 limited-drop alerts and secret discounts.
               </p>
@@ -52,7 +43,7 @@ export default function WhatsAppChannel() {
               href={WHATSAPP_CHANNEL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-2.5 bg-charcoal px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-charcoal/90"
+              className="inline-flex shrink-0 items-center gap-2.5 bg-[#2C2C2C] px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#2C2C2C]/90"
             >
               <WhatsAppChannelIcon className="h-4 w-4" />
               Join WhatsApp Channel

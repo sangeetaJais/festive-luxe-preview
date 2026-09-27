@@ -17,8 +17,8 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
   }
 
   return (
-    <article className="group flex h-full min-w-0 flex-col overflow-hidden border border-charcoal/10 bg-white">
-      <div className="relative h-[200px] w-full shrink-0 overflow-hidden bg-cream/40 md:h-[320px]">
+    <article className="group flex h-full min-w-0 flex-col overflow-hidden border border-[#2C2C2C]/12 bg-white">
+      <div className="relative h-[200px] w-full shrink-0 overflow-hidden bg-cream md:h-[320px]">
         <img
           src={product.imageUrl}
           alt={product.name}
@@ -26,18 +26,18 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
           decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        <span className="absolute left-2 top-2 bg-white/95 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-charcoal md:left-3 md:top-3 md:px-2.5 md:text-[9px] md:tracking-[0.2em]">
+        <span className="absolute left-2 top-2 bg-white/95 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C] md:left-3 md:top-3 md:px-2.5 md:text-[9px] md:tracking-[0.2em]">
           {product.tag}
         </span>
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col">
         <div className="flex flex-1 flex-col px-2.5 pt-3 md:px-4 md:pt-4">
-          <p className="shrink-0 text-[9px] font-medium uppercase tracking-[0.18em] text-charcoal/45 md:text-[10px] md:tracking-[0.2em]">
+          <p className="shrink-0 text-[9px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/45 md:text-[10px] md:tracking-[0.2em]">
             {product.category}
           </p>
 
-          <h3 className="mt-1 h-[40px] overflow-hidden font-serif text-sm leading-5 text-charcoal line-clamp-2 md:mt-1.5 md:h-[48px] md:text-lg md:leading-6">
+          <h3 className="mt-1 h-[40px] overflow-hidden font-serif text-sm leading-5 text-[#2C2C2C] line-clamp-2 md:mt-1.5 md:h-[48px] md:text-lg md:leading-6">
             {product.name}
           </h3>
 
@@ -54,7 +54,7 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
         <button
           type="button"
           onClick={handleOrder}
-          className="mt-4 flex w-full shrink-0 items-center justify-center gap-1.5 bg-charcoal px-3 py-3 text-[10px] font-medium uppercase tracking-wider text-white transition-opacity duration-300 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold md:mt-5 md:gap-2 md:py-3.5 md:text-xs"
+          className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#2C2C2C] px-3 py-3 text-[10px] font-medium uppercase tracking-wider text-white transition-opacity duration-300 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C5A880] md:gap-2 md:py-3.5 md:text-xs"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -109,88 +109,90 @@ export default function ProductGrid({
   }
 
   return (
-    <section id="collection" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-      <div className="mb-10 flex flex-col items-start justify-between gap-8 sm:mb-12 lg:flex-row lg:items-end">
-        <div className="max-w-2xl">
-          <h2
-            className="font-serif text-2xl uppercase text-charcoal sm:text-3xl md:text-4xl"
-            style={{ letterSpacing: '3px' }}
-          >
-            The Inaugural Collective
-          </h2>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-charcoal/60 sm:text-[15px]">
-            Explore handpicked, premium everyday essentials and festive statements.
-            Every piece is meticulously curated for our community, with seamless
-            door-step delivery verified for your local neighborhood.
-          </p>
-        </div>
-
-        <div
-          className="flex flex-wrap gap-2"
-          role="tablist"
-          aria-label="Earring sub-categories"
-        >
-          {FILTER_TABS.map((tab) => {
-            const isActive = activeFilter === tab
-            return (
-              <button
-                key={tab}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                onClick={() => handleFilterChange(tab)}
-                className={`border px-3 py-2 text-[10px] font-medium uppercase tracking-[0.14em] transition sm:px-4 sm:text-[11px] sm:tracking-[0.16em] ${
-                  isActive
-                    ? 'border-charcoal bg-charcoal text-white'
-                    : 'border-charcoal/20 bg-white/70 text-charcoal/70 hover:border-charcoal/40 hover:text-charcoal'
-                }`}
-              >
-                {tab}
-              </button>
-            )
-          })}
-        </div>
-      </div>
-
-      {filteredProducts.length === 0 ? (
-        <p className="py-16 text-center font-serif text-xl text-charcoal/50">
-          No pieces in this category right now.
-        </p>
-      ) : (
-        <>
-          <div className="grid grid-cols-2 items-stretch gap-2.5 sm:gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4 lg:gap-6">
-            {visibleProducts.map((product, index) => (
-              <div
-                key={product.id}
-                className={`h-full ${
-                  revealFrom > 0 && index >= revealFrom ? 'animate-fade-in' : ''
-                }`}
-              >
-                <ProductCard
-                  product={product}
-                  checkoutUnlocked={checkoutUnlocked}
-                  locationArea={locationArea}
-                  onRequireLocation={onRequireLocation}
-                />
-              </div>
-            ))}
+    <section id="collection" className="border-y border-[#2C2C2C]/10 bg-cream">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="mb-10 flex flex-col items-start justify-between gap-8 border-b border-[#2C2C2C]/10 pb-8 sm:mb-12 lg:flex-row lg:items-end">
+          <div className="max-w-2xl">
+            <h2
+              className="font-serif text-2xl uppercase text-[#2C2C2C] sm:text-3xl md:text-4xl"
+              style={{ letterSpacing: '3px' }}
+            >
+              The Inaugural Collective
+            </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#2C2C2C]/60 sm:text-[15px]">
+              Explore handpicked, premium everyday essentials and festive statements.
+              Every piece is meticulously curated for our community, with seamless
+              door-step delivery verified for your local neighborhood.
+            </p>
           </div>
 
-          {hasMore ? (
-            <div className="mt-12 flex justify-center">
-              <button
-                type="button"
-                onClick={handleLoadMore}
-                className="border border-[#2C2C2C] bg-transparent px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.2em] text-charcoal transition-all duration-300 ease-out hover:delay-75 hover:bg-[#2C2C2C] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-              >
-                {remainingCount > PAGE_SIZE
-                  ? 'View More Options'
-                  : 'Explore All Designs →'}
-              </button>
+          <div
+            className="flex flex-wrap gap-2"
+            role="tablist"
+            aria-label="Earring sub-categories"
+          >
+            {FILTER_TABS.map((tab) => {
+              const isActive = activeFilter === tab
+              return (
+                <button
+                  key={tab}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => handleFilterChange(tab)}
+                  className={`border px-3 py-2 text-[10px] font-medium uppercase tracking-[0.14em] transition sm:px-4 sm:text-[11px] sm:tracking-[0.16em] ${
+                    isActive
+                      ? 'border-[#2C2C2C] bg-[#2C2C2C] text-white'
+                      : 'border-[#2C2C2C]/20 bg-white text-[#2C2C2C]/70 hover:border-[#2C2C2C]/40 hover:text-[#2C2C2C]'
+                  }`}
+                >
+                  {tab}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {filteredProducts.length === 0 ? (
+          <p className="py-16 text-center font-serif text-xl text-[#2C2C2C]/50">
+            No pieces in this category right now.
+          </p>
+        ) : (
+          <>
+            <div className="grid grid-cols-2 items-stretch gap-2.5 sm:gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4 lg:gap-6">
+              {visibleProducts.map((product, index) => (
+                <div
+                  key={product.id}
+                  className={`h-full ${
+                    revealFrom > 0 && index >= revealFrom ? 'animate-fade-in' : ''
+                  }`}
+                >
+                  <ProductCard
+                    product={product}
+                    checkoutUnlocked={checkoutUnlocked}
+                    locationArea={locationArea}
+                    onRequireLocation={onRequireLocation}
+                  />
+                </div>
+              ))}
             </div>
-          ) : null}
-        </>
-      )}
+
+            {hasMore ? (
+              <div className="mt-12 flex justify-center border-t border-[#2C2C2C]/10 pt-10">
+                <button
+                  type="button"
+                  onClick={handleLoadMore}
+                  className="border border-[#2C2C2C] bg-transparent px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.2em] text-[#2C2C2C] transition-all duration-300 ease-out hover:delay-75 hover:bg-[#2C2C2C] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C5A880]"
+                >
+                  {remainingCount > PAGE_SIZE
+                    ? 'View More Options'
+                    : 'Explore All Designs'}
+                </button>
+              </div>
+            ) : null}
+          </>
+        )}
+      </div>
     </section>
   )
 }

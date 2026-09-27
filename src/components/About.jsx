@@ -3,7 +3,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="scroll-mt-24 border-t border-charcoal/10 bg-[#F4EFE6]"
+      className="scroll-mt-24 border-t border-[#2C2C2C]/10 bg-cream"
     >
       <div className="mx-auto max-w-3xl px-8 py-16 text-center sm:py-20 md:py-24">
         <h2
@@ -16,7 +16,11 @@ export default function About() {
 
         <div className="mx-auto mt-8 max-w-2xl space-y-5 text-sm leading-relaxed text-[#2C2C2C]/80 sm:mt-10 sm:text-[15px] sm:leading-7">
           <p>
-          ZELVORA LIFESTYLE was conceptualized and engineered by a professional software developer with a vision to merge clean coding standards with premium curated fashion. Driven by a passion for minimal aesthetics, our founder handpicks every piece in this collective to redefine everyday elegance for the modern lifestyle.
+            ZELVORA LIFESTYLE was conceptualized and engineered by a professional
+            software developer with a vision to merge clean coding standards with
+            premium curated fashion. Driven by a passion for minimal aesthetics,
+            our founder handpicks every piece in this collective to redefine
+            everyday elegance for the modern lifestyle.
           </p>
           <p>
             Every single piece in our collection is curated with absolute

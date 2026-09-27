@@ -1,31 +1,27 @@
+import { FloralCorners } from './BrandAtmosphere'
+
 export default function Hero({ onExplore, onVerifyLocation }) {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b border-charcoal/10"
+      className="relative overflow-hidden border-b border-[#2C2C2C]/10 bg-cream"
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-40"
-        style={{
-          backgroundImage:
-            'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(197,168,128,0.35), transparent), linear-gradient(180deg, #FFFFFF 0%, #F4EFE6 100%)',
-        }}
-        aria-hidden="true"
-      />
+      {/* Subtle top-boundary floral accent only */}
+      <FloralCorners idPrefix="hero" size="section" placement="top" />
 
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 pb-16 pt-20 text-center sm:px-6 sm:pb-24 sm:pt-28 lg:px-8">
-        <p className="animate-fade-in mb-5 text-[10px] font-medium uppercase tracking-[0.4em] text-gold">
+      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-4 pb-16 pt-20 text-center sm:px-6 sm:pb-24 sm:pt-28 lg:px-8">
+        <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.4em] text-[#C5A880]">
           Limited Drop · Lifestyle Collective
         </p>
 
-        <h1 className="animate-slide-up font-serif text-4xl leading-[1.15] tracking-tight text-charcoal sm:text-5xl md:text-6xl lg:text-7xl text-balance">
+        <h1 className="font-serif text-4xl leading-[1.15] tracking-tight text-[#2C2C2C] sm:text-5xl md:text-6xl lg:text-7xl text-balance">
           Curated Elegance.
-          <span className="mt-2 block italic text-charcoal/85">
+          <span className="mt-2 block italic text-[#2C2C2C]/85">
             Handpicked For You.
           </span>
         </h1>
 
-        <p className="animate-fade-in mt-6 max-w-xl text-sm leading-relaxed text-charcoal/65 sm:text-base">
+        <p className="mt-6 max-w-xl text-sm leading-relaxed text-[#2C2C2C]/65 sm:text-base">
           Daily studs, anti-tarnish hoops, and statement drops — curated for festive
           nights and everyday grace.
         </p>
@@ -34,7 +30,7 @@ export default function Hero({ onExplore, onVerifyLocation }) {
           <a
             href="#collection"
             onClick={onExplore}
-            className="group inline-flex items-center gap-2 bg-charcoal px-8 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-white transition hover:bg-charcoal/90"
+            className="group inline-flex items-center gap-2 bg-[#2C2C2C] px-8 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-white transition hover:bg-[#2C2C2C]/90"
           >
             Explore Collection
             <svg
@@ -57,7 +53,7 @@ export default function Hero({ onExplore, onVerifyLocation }) {
           <button
             type="button"
             onClick={onVerifyLocation}
-            className="inline-flex items-center gap-2 border border-charcoal/25 bg-white/60 px-8 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-charcoal transition hover:border-gold hover:text-gold"
+            className="inline-flex items-center gap-2 border border-[#2C2C2C]/25 bg-white px-8 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#2C2C2C] transition hover:border-[#C5A880] hover:text-[#C5A880]"
           >
             Check Delivery Availability
           </button>

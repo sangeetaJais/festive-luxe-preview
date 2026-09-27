@@ -6,6 +6,10 @@ import ProductGrid from './components/ProductGrid'
 import WhatsAppChannel from './components/WhatsAppChannel'
 import About from './components/About'
 import Footer from './components/Footer'
+import TeaserPage from './components/TeaserPage'
+import RevealPage from './components/RevealPage'
+
+const isStoreLive = false
 
 const STORAGE_KEY = 'zelvora_delivery_location'
 
@@ -96,7 +100,7 @@ function Toast({ title, message, onDismiss, variant = 'success' }) {
   )
 }
 
-export default function App() {
+function Storefront() {
   const [locationArea, setLocationArea] = useState(() => {
     try {
       return localStorage.getItem(STORAGE_KEY) || ''
@@ -158,10 +162,7 @@ export default function App() {
       />
 
       <main>
-        <Hero
-          onExplore={handleExplore}
-          onVerifyLocation={openLocationModal}
-        />
+        <Hero onExplore={handleExplore} onVerifyLocation={openLocationModal} />
 
         <ProductGrid
           checkoutUnlocked={checkoutUnlocked}
@@ -192,5 +193,19 @@ export default function App() {
         />
       ) : null}
     </div>
+  )
+}
+
+export default function App() {
+  if (!isStoreLive) {
+    return <TeaserPage />
+  }
+
+  return (
+    <>
+      <RevealPage />
+      <Storefront />
+
+    </>
   )
 }

@@ -6,12 +6,14 @@ export const FILTER_TABS = [
 ]
 
 export const BUSINESS_PHONE = {
-  display: '+91 9876543210',
+  display: '+91 9131767938',
 }
 
-export const INSTAGRAM_URL = 'https://www.instagram.com/zelvora_lifestyle/'
+export const INSTAGRAM_URL =
+  'https://www.instagram.com/zelvora_lifestyle?utm_source=qr&stkn=MnJxeGVpN3Bubmoy'
 
-export const WHATSAPP_CHANNEL_URL = 'https://whatsapp.com'
+export const WHATSAPP_CHANNEL_URL =
+  'https://whatsapp.com/channel/0029Vb8Z5CdA2pL9ZngNks2i'
 
 export const products = [
   {
