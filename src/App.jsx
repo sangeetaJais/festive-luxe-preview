@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 import TeaserPage from './components/TeaserPage'
 import RevealPage from './components/RevealPage'
 
-const isStoreLive = true
+const isStoreLive = false
 
 const STORAGE_KEY = 'zelvora_delivery_location'
 
