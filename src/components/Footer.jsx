@@ -1,5 +1,6 @@
-import { BUSINESS_PHONE, INSTAGRAM_URL, WHATSAPP_CHANNEL_URL } from '../data/products'
-import { InstagramIcon, PhoneIcon } from './icons'
+import { INSTAGRAM_URL, WHATSAPP_CHANNEL_URL } from '../data/products'
+import ContactPhone from './ContactPhone'
+import { InstagramIcon } from './icons'
 import { FloralCorners } from './BrandAtmosphere'
 
 export default function Footer() {
@@ -24,12 +25,7 @@ export default function Footer() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-[3px] text-[#2C2C2C]/70">
             Customer Care
           </p>
-          <div className="inline-flex items-center gap-2.5 text-[#2C2C2C]">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#2C2C2C]/15">
-              <PhoneIcon className="h-3.5 w-3.5" />
-            </span>
-            <span className="text-sm tracking-wide">{BUSINESS_PHONE.display}</span>
-          </div>
+          <ContactPhone />
           <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/45">
             Customer Care · Pan-India Expansion Underway
           </p>

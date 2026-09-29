@@ -1,12 +1,15 @@
 export const FILTER_TABS = [
   'ALL',
-  'DAILY STUDS',
+  'MINIMAL CHAINS',
+  'KOREAN EARRINGS',
   'ANTI-TARNISH HOOPS',
   'STATEMENT DROPS',
+  'LIFESTYLE ACCENTS',
 ]
 
 export const BUSINESS_PHONE = {
   display: '+91 9131767938',
+  tel: '+919131767938',
 }
 
 export const INSTAGRAM_URL =
@@ -17,98 +20,54 @@ export const WHATSAPP_CHANNEL_URL =
 
 export const products = [
   {
-    id: 'zv-stud-01',
-    name: 'Pearl Whisper Daily Studs',
-    originalPrice: 249,
-    sellingPrice: 149,
-    category: 'DAILY STUDS',
-    tag: 'Best Seller',
-    imageUrl:
-      'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80',
-    isAvailable: true,
-  },
-  {
-    id: 'zv-stud-02',
-    name: 'Barely-There Gold Dot Studs',
-    originalPrice: 269,
-    sellingPrice: 169,
-    category: 'DAILY STUDS',
-    tag: 'Best Seller',
-    imageUrl:
-      'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80',
-    isAvailable: true,
-  },
-  {
-    id: 'zv-stud-03',
-    name: 'Ivory Knot Minimal Studs',
-    originalPrice: 299,
-    sellingPrice: 189,
-    category: 'DAILY STUDS',
-    tag: 'Festive Drop',
-    imageUrl:
-      'https://images.unsplash.com/photo-1535632786780-7b8a0e87f0a0?auto=format&fit=crop&w=800&q=80',
-    isAvailable: true,
-  },
-  {
-    id: 'zv-stud-04',
-    name: 'Soft Rose Disc Studs',
-    originalPrice: 279,
-    sellingPrice: 179,
-    category: 'DAILY STUDS',
-    tag: 'Best Seller',
-    imageUrl:
-      'https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?auto=format&fit=crop&w=800&q=80',
-    isAvailable: true,
-  },
-  {
-    id: 'zv-hoop-01',
-    name: 'Luna Anti-Tarnish Hoops',
-    originalPrice: 299,
-    sellingPrice: 199,
-    category: 'ANTI-TARNISH HOOPS',
-    tag: 'Best Seller',
-    imageUrl:
-      'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80',
-    isAvailable: true,
-  },
-  {
-    id: 'zv-hoop-02',
-    name: 'Western Slim Loop Hoops',
-    originalPrice: 329,
-    sellingPrice: 219,
-    category: 'ANTI-TARNISH HOOPS',
-    tag: 'Festive Drop',
-    imageUrl:
-      'https://images.unsplash.com/photo-1605100804763-247f995fff84?auto=format&fit=crop&w=800&q=80',
-    isAvailable: true,
-  },
-  {
-    id: 'zv-hoop-03',
-    name: 'Champagne Tube Hoops',
-    originalPrice: 349,
+    id: 'zv-001',
+    name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
+    originalPrice: 499,
     sellingPrice: 249,
-    category: 'ANTI-TARNISH HOOPS',
-    tag: 'Best Seller',
+    category: 'MINIMAL CHAINS',
+    tag: 'Stainless Steel',
     imageUrl:
-      'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
     isAvailable: true,
   },
   {
-    id: 'zv-hoop-04',
-    name: 'Satin Twist Everyday Hoops',
-    originalPrice: 339,
-    sellingPrice: 229,
-    category: 'ANTI-TARNISH HOOPS',
-    tag: 'Festive Drop',
+    id: 'zv-002',
+    name: 'Parisian Eiffel Tower Minimalist Necklace',
+    originalPrice: 499,
+    sellingPrice: 249,
+    category: 'MINIMAL CHAINS',
+    tag: 'Premium Polish',
     imageUrl:
       'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=800&q=80',
     isAvailable: true,
   },
   {
-    id: 'zv-drop-01',
-    name: 'Aurora Statement Drop Earrings',
-    originalPrice: 399,
-    sellingPrice: 279,
+    id: 'zv-003',
+    name: 'Korean Metallic Blossom Bow Studs',
+    originalPrice: 299,
+    sellingPrice: 149,
+    category: 'KOREAN EARRINGS',
+    tag: 'Aesthetic Core',
+    imageUrl:
+      'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+  },
+  {
+    id: 'zv-004',
+    name: 'Sleek Anti-Tarnish Daily Hoops Set',
+    originalPrice: 299,
+    sellingPrice: 199,
+    category: 'ANTI-TARNISH HOOPS',
+    tag: 'Everyday Essential',
+    imageUrl:
+      'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+  },
+  {
+    id: 'zv-005',
+    name: 'Traditional Ghungroo Festive Jhumka',
+    originalPrice: 499,
+    sellingPrice: 299,
     category: 'STATEMENT DROPS',
     tag: 'Festive Drop',
     imageUrl:
@@ -116,36 +75,25 @@ export const products = [
     isAvailable: true,
   },
   {
-    id: 'zv-drop-02',
-    name: 'Saffron Cascade Party Drops',
-    originalPrice: 449,
-    sellingPrice: 329,
-    category: 'STATEMENT DROPS',
-    tag: 'Festive Drop',
+    id: 'zv-006',
+    name: 'Premium Satin Silk Scrunchies Pack',
+    originalPrice: 199,
+    sellingPrice: 99,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Ultra Soft',
     imageUrl:
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
     isAvailable: true,
   },
   {
-    id: 'zv-drop-03',
-    name: 'Noir Crystal Statement Drops',
-    originalPrice: 499,
-    sellingPrice: 349,
-    category: 'STATEMENT DROPS',
-    tag: 'Best Seller',
+    id: 'zv-007',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
     imageUrl:
-      'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80',
-    isAvailable: true,
-  },
-  {
-    id: 'zv-drop-04',
-    name: 'Amber Lattice Party Drops',
-    originalPrice: 429,
-    sellingPrice: 299,
-    category: 'STATEMENT DROPS',
-    tag: 'Best Seller',
-    imageUrl:
-      'https://images.unsplash.com/photo-1603561596112-0a132b757784?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80',
     isAvailable: true,
   },
 ]

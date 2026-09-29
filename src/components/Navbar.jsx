@@ -1,5 +1,6 @@
-import { BUSINESS_PHONE, INSTAGRAM_URL } from '../data/products'
-import { InstagramIcon, PhoneIcon } from './icons'
+import { INSTAGRAM_URL } from '../data/products'
+import ContactPhone from './ContactPhone'
+import { InstagramIcon } from './icons'
 
 export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
   return (
@@ -73,12 +74,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
             About
           </a>
 
-          <span className="flex items-center gap-2 rounded-full border border-[#2C2C2C]/15 px-2.5 py-2 text-[#2C2C2C] sm:px-3">
-            <PhoneIcon className="h-3.5 w-3.5" />
-            <span className="hidden text-[10px] font-medium tracking-[0.12em] text-[#2C2C2C]/70 sm:inline">
-              {BUSINESS_PHONE.display}
-            </span>
-          </span>
+          <ContactPhone variant="navbar" />
 
           <a
             href={INSTAGRAM_URL}

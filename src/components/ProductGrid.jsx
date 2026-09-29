@@ -111,45 +111,50 @@ export default function ProductGrid({
   return (
     <section id="collection" className="border-y border-[#2C2C2C]/10 bg-cream">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-        <div className="mb-10 flex flex-col items-start justify-between gap-8 border-b border-[#2C2C2C]/10 pb-8 sm:mb-12 lg:flex-row lg:items-end">
-          <div className="max-w-2xl">
-            <h2
-              className="font-serif text-2xl uppercase text-[#2C2C2C] sm:text-3xl md:text-4xl"
-              style={{ letterSpacing: '3px' }}
-            >
-              The Inaugural Collective
-            </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#2C2C2C]/60 sm:text-[15px]">
-              Explore handpicked, premium everyday essentials and festive statements.
-              Every piece is meticulously curated for our community, with seamless
-              door-step delivery verified for your local neighborhood.
-            </p>
-          </div>
+        <div className="mb-10 border-b border-[#2C2C2C]/10 pb-8 sm:mb-12">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+            <div className="mx-auto w-full max-w-xl shrink-0 text-center lg:mx-0 lg:text-left">
+              <h2
+                className="font-serif text-2xl uppercase text-[#2C2C2C] sm:text-3xl md:text-4xl"
+                style={{ letterSpacing: '3px' }}
+              >
+                The Inaugural Drop
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-[#2C2C2C]/60 sm:text-[15px]">
+                Explore a meticulously curated capsule collection of premium minimal
+                chains, aesthetic Korean earrings, anti-tarnish hoops, statement
+                drops, and luxury lifestyle accents handpicked to elevate your
+                everyday outfit routine.
+              </p>
+            </div>
 
-          <div
-            className="flex flex-wrap gap-2"
-            role="tablist"
-            aria-label="Earring sub-categories"
-          >
-            {FILTER_TABS.map((tab) => {
-              const isActive = activeFilter === tab
-              return (
-                <button
-                  key={tab}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => handleFilterChange(tab)}
-                  className={`border px-3 py-2 text-[10px] font-medium uppercase tracking-[0.14em] transition sm:px-4 sm:text-[11px] sm:tracking-[0.16em] ${
-                    isActive
-                      ? 'border-[#2C2C2C] bg-[#2C2C2C] text-white'
-                      : 'border-[#2C2C2C]/20 bg-white text-[#2C2C2C]/70 hover:border-[#2C2C2C]/40 hover:text-[#2C2C2C]'
-                  }`}
-                >
-                  {tab}
-                </button>
-              )
-            })}
+            <div className="-mx-4 min-w-0 lg:mx-0 lg:max-w-[36rem]">
+              <div
+                className="flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [-ms-overflow-style:none] sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 lg:justify-end [&::-webkit-scrollbar]:hidden"
+                role="tablist"
+                aria-label="Lifestyle collection categories"
+              >
+                {FILTER_TABS.map((tab) => {
+                  const isActive = activeFilter === tab
+                  return (
+                    <button
+                      key={tab}
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
+                      onClick={() => handleFilterChange(tab)}
+                      className={`shrink-0 whitespace-nowrap border px-3 py-2 text-[9px] font-medium uppercase tracking-[0.12em] text-[#2C2C2C] transition sm:px-3.5 sm:text-[10px] sm:tracking-[0.14em] ${
+                        isActive
+                          ? 'border-[#2C2C2C] bg-[#2C2C2C] text-white'
+                          : 'border-[#2C2C2C]/20 bg-white text-[#2C2C2C] hover:border-[#2C2C2C]/40'
+                      }`}
+                    >
+                      {tab}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
           </div>
         </div>
 

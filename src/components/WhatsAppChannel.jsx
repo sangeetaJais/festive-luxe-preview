@@ -24,7 +24,16 @@ export default function WhatsAppChannel() {
         <div className="relative overflow-hidden border border-[#2C2C2C]/10 bg-white">
           <div className="relative flex flex-col items-start justify-between gap-8 px-6 py-8 sm:px-10 sm:py-10 md:flex-row md:items-center">
             <div className="max-w-2xl">
-              <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-[#C5A880]">
+              <p className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.35em] text-[#C5A880]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-4 w-4 shrink-0 text-[#2C2C2C] md:h-5 md:w-5"
+                  aria-hidden="true"
+                >
+                  <path d="M12 2.4 13.7 8h6.3l-5.1 3.7 1.9 5.9L12 14.8 7.2 17.6l1.9-5.9L4 8h6.3L12 2.4Z" />
+                </svg>
                 Style Circle
               </p>
               <h2
