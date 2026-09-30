@@ -85,6 +85,11 @@ export default function RevealPage() {
           Zelvora
         </h1>
 
+        <p className="tracking-[6px] text-[10px] md:text-xs font-semibold text-gray-500 uppercase mt-2 text-center">
+  LIFESTYLE COLLECTIVE
+</p>
+
+
         <div
           className="mx-auto mt-7 h-px w-20 bg-gradient-to-r from-transparent via-[#2C2C2C]/30 to-transparent"
           aria-hidden="true"

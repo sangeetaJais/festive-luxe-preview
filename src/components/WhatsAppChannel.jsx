@@ -25,15 +25,35 @@ export default function WhatsAppChannel() {
           <div className="relative flex flex-col items-start justify-between gap-8 px-6 py-8 sm:px-10 sm:py-10 md:flex-row md:items-center">
             <div className="max-w-2xl">
               <p className="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.35em] text-[#C5A880]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="h-4 w-4 shrink-0 text-[#2C2C2C] md:h-5 md:w-5"
-                  aria-hidden="true"
-                >
-                  <path d="M12 2.4 13.7 8h6.3l-5.1 3.7 1.9 5.9L12 14.8 7.2 17.6l1.9-5.9L4 8h6.3L12 2.4Z" />
-                </svg>
+  <svg 
+  xmlns="http://w3.org" 
+  viewBox="0 0 24 24" 
+  fill="none" 
+  className="w-6 h-6 md:w-7 md:h-7 inline-block align-middle mr-2"
+  style={{ display: 'inline-flex' }}
+>
+  <defs>
+  
+    <linearGradient id="zelvora-original-floral" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#F4A261" />  
+      <stop offset="50%" stopColor="#E9C46A" />
+      
+      <stop offset="100%" stopColor="#E76F51" /> 
+    </linearGradient>
+  </defs>
+
+  
+  <path 
+    d="M12 12C12 8.5 9.5 6 6.5 6C3.5 6 3.5 10.5 6.5 12C9.5 13.5 12 12 12 12ZM12 12C15.5 12 18 9.5 18 6.5C18 3.5 13.5 3.5 12 6.5C10.5 9.5 12 12 12 12ZM12 12C12 15.5 14.5 18 17.5 18C20.5 18 20.5 13.5 17.5 12C14.5 10.5 12 12 12 12ZM12 12C8.5 12 6 14.5 6 17.5C6 20.5 10.5 20.5 12 17.5C13.5 14.5 12 12 12 12Z" 
+    fill="url(#zelvora-original-floral)" 
+    stroke="#2C2C2C"
+    strokeWidth="0.5"
+  />
+  
+ 
+  <circle cx="12" cy="12" r="1.5" fill="#FFFFFF" />
+</svg>
+
                 Style Circle
               </p>
               <h2

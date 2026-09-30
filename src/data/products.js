@@ -1,3 +1,13 @@
+import pendentImg1 from '../assets/images/anti-pendent1.jpeg'
+import pendentImg2 from '../assets/images/anti-pendent2.jpeg'
+import pendentImg3 from '../assets/images/anti-pendent3.jpeg'
+import antiEarringLit1 from '../assets/images/anti-earring-lit1.jpeg'
+import antiEarringLit2 from '../assets/images/anti-earring-lit2.jpeg'
+import antiEarringLit3 from '../assets/images/anti-earring-lit3.jpeg'
+import antiEarringB2Img from '../assets/images/anti-earring-b2.jpeg'
+import koreanEarring1 from '../assets/images/korean-earring1.jpeg'
+
+
 export const FILTER_TABS = [
   'ALL',
   'MINIMAL CHAINS',
@@ -27,7 +37,7 @@ export const products = [
     category: 'MINIMAL CHAINS',
     tag: 'Stainless Steel',
     imageUrl:
-      'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80',
+      pendentImg1,
     isAvailable: true,
   },
   {
@@ -38,7 +48,7 @@ export const products = [
     category: 'MINIMAL CHAINS',
     tag: 'Premium Polish',
     imageUrl:
-      'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=800&q=80',
+      pendentImg2,
     isAvailable: true,
   },
   {
@@ -49,7 +59,7 @@ export const products = [
     category: 'KOREAN EARRINGS',
     tag: 'Aesthetic Core',
     imageUrl:
-      'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=800&q=80',
+      pendentImg3,
     isAvailable: true,
   },
   {
@@ -60,7 +70,7 @@ export const products = [
     category: 'ANTI-TARNISH HOOPS',
     tag: 'Everyday Essential',
     imageUrl:
-      'https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80',
+      pendentImg3,
     isAvailable: true,
   },
   {
@@ -71,7 +81,7 @@ export const products = [
     category: 'STATEMENT DROPS',
     tag: 'Festive Drop',
     imageUrl:
-      'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+      antiEarringLit1,
     isAvailable: true,
   },
   {
@@ -82,7 +92,7 @@ export const products = [
     category: 'LIFESTYLE ACCENTS',
     tag: 'Ultra Soft',
     imageUrl:
-      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
+      antiEarringLit2,
     isAvailable: true,
   },
   {
@@ -93,7 +103,40 @@ export const products = [
     category: 'LIFESTYLE ACCENTS',
     tag: 'Trendy Statement',
     imageUrl:
-      'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80',
+      antiEarringLit3,
+    isAvailable: true,
+  },
+  {
+    id: 'zv-008',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
+    imageUrl:
+      antiEarringB2Img,
+    isAvailable: true,
+  },
+  {
+    id: 'zv-009',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
+    imageUrl:
+      koreanEarring1,
+    isAvailable: true,
+  },
+   {
+    id: 'zv-010',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
+    imageUrl:
+      koreanEarring1,
     isAvailable: true,
   },
 ]
