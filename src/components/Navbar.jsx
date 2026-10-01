@@ -59,7 +59,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
 
         <a href="#top" className="text-center">
           <span className="block font-serif text-2xl font-normal tracking-[0.35em] text-[#2C2C2C] sm:text-3xl">
-            ZELVORA
+            krishayá
           </span>
           <span className="mt-0.5 block text-[9px] font-medium uppercase tracking-[0.42em] text-[#C5A880]">
             Lifestyle Collective
@@ -80,7 +80,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Follow Zelvora Lifestyle on Instagram @zelvora_lifestyle"
+            aria-label="Follow Krishaaya Lifestyle on Instagram @zelvora_lifestyle"
             className="flex h-9 w-9 items-center justify-center rounded-full border border-[#2C2C2C]/15 text-[#2C2C2C] transition hover:border-[#C5A880] hover:text-[#C5A880]"
           >
             <InstagramIcon className="h-4 w-4" />

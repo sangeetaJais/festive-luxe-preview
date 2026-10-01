@@ -1,4 +1,5 @@
 import { ChampagneMesh, FloralCorners } from './BrandAtmosphere'
+import krishayaLogo from '../assets/images/logo/logo-colorful.png'
 
 const FEATURES = [
   { id: 'waterproof', label: 'Waterproof', icon: 'drop' },
@@ -81,13 +82,20 @@ export default function RevealPage() {
           Est. 2026
         </p>
 
-        <h1 className="font-serif text-5xl font-bold uppercase tracking-[12px] text-[#2C2C2C] drop-shadow-sm filter md:text-8xl">
-          Zelvora
+      <div className="flex justify-center items-center ">
+        <img 
+          src={krishayaLogo} 
+          alt="KRISHAYÁ Logo" 
+          className="w-48 h-auto md:w-72 object-contain filter drop-shadow-sm transition-all duration-300"
+        />
+      </div>
+        {/* <h1 className="font-serif text-4xl font-bold uppercase tracking-[14px] text-[#2C2C2C] drop-shadow-sm filter md:text-6xl">
+          KRISHAYÁ
         </h1>
 
         <p className="tracking-[6px] text-[10px] md:text-xs font-semibold text-gray-500 uppercase mt-2 text-center">
   LIFESTYLE COLLECTIVE
-</p>
+</p> */}
 
 
         <div

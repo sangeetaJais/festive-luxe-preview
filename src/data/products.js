@@ -1,11 +1,13 @@
-import pendentImg1 from '../assets/images/anti-pendent1.jpeg'
-import pendentImg2 from '../assets/images/anti-pendent2.jpeg'
-import pendentImg3 from '../assets/images/anti-pendent3.jpeg'
-import antiEarringLit1 from '../assets/images/anti-earring-lit1.jpeg'
-import antiEarringLit2 from '../assets/images/anti-earring-lit2.jpeg'
-import antiEarringLit3 from '../assets/images/anti-earring-lit3.jpeg'
-import antiEarringB2Img from '../assets/images/anti-earring-b2.jpeg'
-import koreanEarring1 from '../assets/images/korean-earring1.jpeg'
+import pendentImg1 from '../assets/images/pendent/anti-pendent1.jpg'
+import pendentImg2 from '../assets/images/pendent/anti-pendent2.jpg'
+import pendentImg3 from '../assets/images/pendent/anti-pendent3.jpg'
+import antiEarringLit1 from '../assets/images/earring/anti-tarnish/anti-earring-lit1.jpg'
+import antiEarringLit2 from '../assets/images/earring/anti-tarnish/anti-earring-lit2.jpg'
+import antiEarringLit3 from '../assets/images/earring/anti-tarnish/anti-earring-lit3.jpg'
+import antiEarringLit4 from '../assets/images/earring/anti-tarnish/anti-earring-lit4.jpg'
+// import antiEarringLit5 from '../assets/images/earring/anti-tarnish/anti-earring-lit5.jpg'
+// import antiEarring2 from '../assets/images/earring/anti-tarnish/anti-earring2.jpg'
+// import koreanEarring1 from '../assets/images/earring/korean/korean-koreanEarring1.jpg'
 
 
 export const FILTER_TABS = [
@@ -114,7 +116,7 @@ export const products = [
     category: 'LIFESTYLE ACCENTS',
     tag: 'Trendy Statement',
     imageUrl:
-      antiEarringB2Img,
+      antiEarringLit4,
     isAvailable: true,
   },
   {
@@ -125,7 +127,7 @@ export const products = [
     category: 'LIFESTYLE ACCENTS',
     tag: 'Trendy Statement',
     imageUrl:
-      koreanEarring1,
+      antiEarringLit4,
     isAvailable: true,
   },
    {
@@ -136,7 +138,62 @@ export const products = [
     category: 'LIFESTYLE ACCENTS',
     tag: 'Trendy Statement',
     imageUrl:
-      koreanEarring1,
+        antiEarringLit4,
+    isAvailable: true,
+  },
+    {
+    id: 'zv-011',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
+    imageUrl:
+        antiEarringLit4,
+    isAvailable: true,
+  },
+    {
+    id: 'zv-012',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
+    imageUrl:
+        antiEarringLit4,
+    isAvailable: true,
+  },
+     {
+    id: 'zv-013',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
+    imageUrl:
+        antiEarringLit4,
+    isAvailable: true,
+  },
+       {
+    id: 'zv-014',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
+    imageUrl:
+        antiEarringLit4,
+    isAvailable: true,
+  },
+       {
+    id: 'zv-015',
+    name: 'Aesthetic Pastel Resin Bangle Collective',
+    originalPrice: 399,
+    sellingPrice: 199,
+    category: 'LIFESTYLE ACCENTS',
+    tag: 'Trendy Statement',
+    imageUrl:
+        antiEarringLit4,
     isAvailable: true,
   },
 ]
