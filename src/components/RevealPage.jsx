@@ -131,27 +131,6 @@ export default function RevealPage() {
           ))}
         </ul>
       </div>
-
-      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2">
-        <span className="font-serif text-[10px] tracking-wide text-[#2C2C2C]/45">
-          Scroll to Enter the Atelier
-        </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.25"
-          className="h-4 w-4 animate-bounce text-[#2C2C2C]/45"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-          />
-        </svg>
-      </div>
     </section>
   )
 }

@@ -1,6 +1,7 @@
 import { INSTAGRAM_URL } from '../data/products'
 import ContactPhone from './ContactPhone'
 import { InstagramIcon } from './icons'
+import krishayaLogo from '../assets/images/logo/logo-colorful.png'
 
 export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
   return (
@@ -58,12 +59,11 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
         </div>
 
         <a href="#top" className="text-center">
-          <span className="block font-serif text-2xl font-normal tracking-[0.35em] text-[#2C2C2C] sm:text-3xl">
-            krishayá
-          </span>
-          <span className="mt-0.5 block text-[9px] font-medium uppercase tracking-[0.42em] text-[#C5A880]">
-            Lifestyle Collective
-          </span>
+         <img 
+            src={krishayaLogo} 
+            alt="KRISHAYÁ Logo" 
+            className="w-38 h-auto md:w-44 object-contain filter drop-shadow-sm transition-all duration-300"
+          />
         </a>
 
         <div className="flex items-center gap-2 sm:gap-4">

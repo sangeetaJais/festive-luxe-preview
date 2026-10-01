@@ -5,18 +5,32 @@ import antiEarringLit1 from '../assets/images/earring/anti-tarnish/anti-earring-
 import antiEarringLit2 from '../assets/images/earring/anti-tarnish/anti-earring-lit2.jpg'
 import antiEarringLit3 from '../assets/images/earring/anti-tarnish/anti-earring-lit3.jpg'
 import antiEarringLit4 from '../assets/images/earring/anti-tarnish/anti-earring-lit4.jpg'
-// import antiEarringLit5 from '../assets/images/earring/anti-tarnish/anti-earring-lit5.jpg'
-// import antiEarring2 from '../assets/images/earring/anti-tarnish/anti-earring2.jpg'
-// import koreanEarring1 from '../assets/images/earring/korean/korean-koreanEarring1.jpg'
-
+import antiEarringLit5 from '../assets/images/earring/anti-tarnish/anti-earring-lit5.jpg'
+import antiEarringLit6 from '../assets/images/earring/anti-tarnish/anti-earring-lit6.jpg'
+import antiEarringLit7 from '../assets/images/earring/anti-tarnish/anti-earring-lit7.jpg'
+import antiEarringLit8 from '../assets/images/earring/anti-tarnish/anti-earring-lit8.jpg'
+import cuffBangle1 from '../assets/images/hand-accessories/cuff-bangle1.jpg'
+import silverEarringLit1 from '../assets/images/earring/korean/silver-earring-lit1.jpg'
+import koreanEarring1 from '../assets/images/earring/korean/korean-earring1.jpg'
+import koreanEarring2 from '../assets/images/earring/korean/korean-earring2.jpg'
+import traditionEarring1 from '../assets/images/earring/traditional/tradition-ear1.jpg'
+import traditionEarring2 from '../assets/images/earring/traditional/tradition-ear2.jpg'
+import traditionEarring3 from '../assets/images/earring/traditional/tradition-ear3.jpg'
+import traditionEarring4 from '../assets/images/earring/traditional/tradition-ear4.jpg'
+import crochet1 from '../assets/images/hair-accessories/crochet/crochet1.jpg'
+import bunnyHairClip from '../assets/images/hair-accessories/crochet/hair-clip-bunny.jpg'
+import clipImg1 from '../assets/images/hair-accessories/clip/clip1.jpg'
+import scrunchies1 from '../assets/images/hair-accessories/scrunchies/scrunchies1.jpg'
 
 export const FILTER_TABS = [
   'ALL',
   'MINIMAL CHAINS',
   'KOREAN EARRINGS',
-  'ANTI-TARNISH HOOPS',
+  'ANTI-TARNISH',
   'STATEMENT DROPS',
   'LIFESTYLE ACCENTS',
+  'ETHNIC ELEGANCE '
+  
 ]
 
 export const BUSINESS_PHONE = {
@@ -34,166 +48,267 @@ export const products = [
   {
     id: 'zv-001',
     name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
-    originalPrice: 499,
-    sellingPrice: 249,
+    originalPrice: "",
+    sellingPrice: "₹ 199",
     category: 'MINIMAL CHAINS',
-    tag: 'Stainless Steel',
+    // tag: '',
     imageUrl:
       pendentImg1,
     isAvailable: true,
   },
   {
     id: 'zv-002',
-    name: 'Parisian Eiffel Tower Minimalist Necklace',
-    originalPrice: 499,
-    sellingPrice: 249,
+    name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
+    originalPrice: "",
+    sellingPrice: "₹ 199",
     category: 'MINIMAL CHAINS',
-    tag: 'Premium Polish',
+    // tag: '',
     imageUrl:
       pendentImg2,
     isAvailable: true,
   },
   {
     id: 'zv-003',
-    name: 'Korean Metallic Blossom Bow Studs',
-    originalPrice: 299,
-    sellingPrice: 149,
-    category: 'KOREAN EARRINGS',
-    tag: 'Aesthetic Core',
+    name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
+    originalPrice: "",
+    sellingPrice: "₹ 199",
+    category: 'MINIMAL CHAINS',
+    // tag: 'Aesthetic Core',
     imageUrl:
       pendentImg3,
     isAvailable: true,
   },
   {
     id: 'zv-004',
-    name: 'Sleek Anti-Tarnish Daily Hoops Set',
-    originalPrice: 299,
-    sellingPrice: 199,
-    category: 'ANTI-TARNISH HOOPS',
-    tag: 'Everyday Essential',
+    name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
+    originalPrice: "",
+    sellingPrice: "₹ 199",
+    category: 'MINIMAL CHAINS',
+    // tag: '',
     imageUrl:
       pendentImg3,
     isAvailable: true,
   },
   {
     id: 'zv-005',
-    name: 'Traditional Ghungroo Festive Jhumka',
-    originalPrice: 499,
-    sellingPrice: 299,
-    category: 'STATEMENT DROPS',
-    tag: 'Festive Drop',
+    name: 'Geometric Hexagonal Hoop Earrings ',
+    originalPrice: "",
+    sellingPrice:"₹ 149",
+    category: 'ANTI-TARNISH',
+    // tag: 'Festive Drop',
     imageUrl:
       antiEarringLit1,
     isAvailable: true,
   },
   {
     id: 'zv-006',
-    name: 'Premium Satin Silk Scrunchies Pack',
-    originalPrice: 199,
-    sellingPrice: 99,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Ultra Soft',
+    name: 'Chunky Gold Twisted Hoop Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 149",
+    category: 'ANTI-TARNISH',
+    // tag: 'Ultra Soft',
     imageUrl:
       antiEarringLit2,
     isAvailable: true,
   },
   {
     id: 'zv-007',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
+    name: 'Chunky Gold Twisted Hoop Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 149",
+    category: 'ANTI-TARNISH',
+    // tag: 'Trendy Statement',
     imageUrl:
       antiEarringLit3,
     isAvailable: true,
   },
   {
     id: 'zv-008',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
+    name: 'Chunky Gold Twisted Hoop Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 149",
+    category: 'ANTI-TARNISH',
+    // tag: 'Trendy Statement',
     imageUrl:
       antiEarringLit4,
     isAvailable: true,
   },
   {
     id: 'zv-009',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
+    name: 'Chunky Gold Twisted Hoop Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 249",
+    category: 'ANTI-TARNISH',
+    // tag: 'Trendy Statement',
     imageUrl:
-      antiEarringLit4,
+      antiEarringLit5,
     isAvailable: true,
   },
+   
    {
     id: 'zv-010',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
+    name: 'Chunky Gold Twisted Hoop Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 289",
+    category: 'ANTI-TARNISH', 
+    // tag: 'Trendy Statement',
     imageUrl:
-        antiEarringLit4,
+      antiEarringLit6,
     isAvailable: true,
   },
     {
     id: 'zv-011',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
+    name: 'Chunky Gold Twisted Hoop Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 249",
+    category: 'ANTI-TARNISH', 
+    // tag: 'Trendy Statement',
     imageUrl:
-        antiEarringLit4,
+    antiEarringLit7,
     isAvailable: true,
   },
-    {
-    id: 'zv-012',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
+   {
+     id: 'zv-012',
+    name: 'Anti-Tarnish Minimalist Golden Laurel Leaf Open Cuff Bangle ',
+    originalPrice: "",
+    sellingPrice: "₹ 170",
+    category: 'ANTI-TARNISH', 
+    // tag: 'Trendy Statement',
+    imageUrl:cuffBangle1
+    ,
+    isAvailable: true,
+  },
+  {
+    id: 'zv-013',
+    name: 'Intertwined Ring Textured Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 80",
+    category: 'STATEMENT DROPS', 
+    // tag: 'Trendy Statement',
     imageUrl:
-        antiEarringLit4,
+    antiEarringLit8,
+    isAvailable: true,
+  },
+      {
+    id: 'zv-014',
+    name: 'Intertwined Ring Textured Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 80",
+    category: 'STATEMENT DROPS', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    silverEarringLit1,
     isAvailable: true,
   },
      {
-    id: 'zv-013',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
-    imageUrl:
-        antiEarringLit4,
-    isAvailable: true,
-  },
-       {
-    id: 'zv-014',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
-    imageUrl:
-        antiEarringLit4,
-    isAvailable: true,
-  },
-       {
     id: 'zv-015',
-    name: 'Aesthetic Pastel Resin Bangle Collective',
-    originalPrice: 399,
-    sellingPrice: 199,
-    category: 'LIFESTYLE ACCENTS',
-    tag: 'Trendy Statement',
+    name: 'Silver Rhinestone Bow Pearl Drop Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 90",
+    category: 'KOREAN EARRINGS', 
+    // tag: 'Trendy Statement',
     imageUrl:
-        antiEarringLit4,
+    koreanEarring1,
+    isAvailable: true,
+  },
+  {
+    id: 'zv-016',
+    name: 'Korean Style Black Enamel Bow Stud Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 90",
+    category: 'KOREAN EARRINGS', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    koreanEarring2,
+    isAvailable: true,
+  },
+  {
+    id: 'zv-017',
+    name: 'Antique Gold-Plated Green Glass Stone Jhumka Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 250",
+    category: 'ETHNIC ELEGANCE', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    traditionEarring1,
+    isAvailable: true,
+  },
+  {
+    id: 'zv-018',
+    name: 'Antique Gold-Plated Blue Glass Stone Jhumka Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 250",
+    category: 'ETHNIC ELEGANCE', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    traditionEarring2,
+    isAvailable: true,
+  },
+    {
+    id: 'zv-019',
+    name: 'Antique Gold-Plated Emerald Green Peacock Kundan Drop Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 499",
+    category: 'ETHNIC ELEGANCE', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    traditionEarring3,
+    isAvailable: true,
+  },
+      {
+    id: 'zv-020',
+    name: 'Silver-Toned Pearl & Rhinestone Crystal Cluster Stud Earrings',
+    originalPrice: "",
+    sellingPrice: "₹ 199",
+    category: 'STATEMENT DROPS', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    traditionEarring4,
+    isAvailable: true,
+  },
+      {
+    id: 'zv-021',
+    name: 'Handmade Crochet Bow Hair Clip with Hanging Tulip Poms',
+    originalPrice: "",
+    sellingPrice: "₹ 99",
+    category: 'LIFESTYLE ACCENTS', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    crochet1,
+    isAvailable: true,
+  },
+        {
+    id: 'zv-022',
+    name: 'Cute Plush Flower Hair Clip with Bunny Accent',
+    originalPrice: "",
+    sellingPrice: "₹ 99",
+    category: 'LIFESTYLE ACCENTS', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    bunnyHairClip,
+    isAvailable: true,
+  },
+        {
+    id: 'zv-023',
+    name: 'Transparent Frosted Jelly Acrylic Bow Hair Pins (Pack of 2)',
+    originalPrice: "",
+    sellingPrice: "₹ 99",
+    category: 'LIFESTYLE ACCENTS', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    clipImg1,
+    isAvailable: true,
+  },
+   
+  {
+    id: 'zv-024',
+    name: 'Luxury Heavy-Glow Satin Hair Ties & Ponytail Holders',
+    originalPrice: "",
+    sellingPrice: "₹ 20",
+    category: 'LIFESTYLE ACCENTS', 
+    // tag: 'Trendy Statement',
+    imageUrl:
+    scrunchies1,
     isAvailable: true,
   },
 ]

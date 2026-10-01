@@ -26,9 +26,9 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
           decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        <span className="absolute left-2 top-2 bg-white/95 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C] md:left-3 md:top-3 md:px-2.5 md:text-[9px] md:tracking-[0.2em]">
+        {/* <span className="absolute left-2 top-2 bg-white/95 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C] md:left-3 md:top-3 md:px-2.5 md:text-[9px] md:tracking-[0.2em]">
           {product.tag}
-        </span>
+        </span> */}
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col">
@@ -41,12 +41,12 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
             {product.name}
           </h3>
 
-          <div className="mt-1.5 flex shrink-0 items-baseline md:mt-2">
+          <div className="mt-1.5 flex shrink-0 items-baseline md:mt-2 mb-3">
             <span className="text-sm font-semibold tracking-wide text-[#2C2C2C] md:text-lg">
-              ₹{product.sellingPrice}
+              {product.sellingPrice}
             </span>
             <span className="ml-1.5 text-xs text-gray-400 line-through md:ml-2 md:text-sm">
-              ₹{product.originalPrice}
+              {product.originalPrice}
             </span>
           </div>
         </div>

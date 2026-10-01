@@ -63,7 +63,7 @@ export default function WhatsAppChannel() {
                 Stay Ahead of the Trends
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-[#2C2C2C]/65 sm:text-base">
-                Join our Exclusive ZELVORA Style Circle on WhatsApp Channel for
+                Join our Exclusive Krishaviá  Style Circle on WhatsApp Channel for
                 limited-drop alerts and secret discounts.
               </p>
             </div>

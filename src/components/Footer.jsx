@@ -2,6 +2,8 @@ import { INSTAGRAM_URL, WHATSAPP_CHANNEL_URL } from '../data/products'
 import ContactPhone from './ContactPhone'
 import { InstagramIcon } from './icons'
 import { FloralCorners } from './BrandAtmosphere'
+import krishayaLogo from '../assets/images/logo/logo-colorful.png'
+
 
 export default function Footer() {
   return (
@@ -11,13 +13,12 @@ export default function Footer() {
 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-12 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:items-start lg:gap-10 lg:px-8 lg:py-14">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-          <a href="#top" className="text-center lg:text-left">
-            <span className="block font-serif text-lg tracking-[0.3em] text-[#2C2C2C]">
-              ZELVORA
-            </span>
-            <span className="mt-0.5 block text-[8px] uppercase tracking-[0.4em] text-[#C5A880]">
-              Lifestyle Collective
-            </span>
+          <a href="#top" className="text-center">
+            <img 
+              src={krishayaLogo} 
+              alt="KRISHAYÁ Logo" 
+              className="w-36 h-auto md:w-42 object-contain filter drop-shadow-sm transition-all duration-300"
+            />
           </a>
         </div>
 
@@ -59,8 +60,7 @@ export default function Footer() {
 
       <div className="relative z-10 border-t border-[#2C2C2C]/8 px-4 py-5 sm:px-6 lg:px-8">
         <p className="mx-auto max-w-7xl text-center text-xs uppercase tracking-widest text-[#2C2C2C]/45">
-          Designed, Engineered &amp; Curated by Sangeeta Jaiswal | © 2026 ZELVORA
-          LIFESTYLE. All Rights Reserved.
+          Designed, Engineered &amp; Curated by Sangeeta Jaiswal | © 2026 <b className='uppercase font-normal'>Krishaviá</b>. All Rights Reserved.
         </p>
       </div>
     </footer>
