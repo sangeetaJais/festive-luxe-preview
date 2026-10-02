@@ -26,9 +26,12 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
           decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        {/* <span className="absolute left-2 top-2 bg-white/95 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C] md:left-3 md:top-3 md:px-2.5 md:text-[9px] md:tracking-[0.2em]">
-          {product.tag}
-        </span> */}
+       {/* Right-Aligned Conditional Tag Display */}
+        {product.tag && (
+          <span className="absolute right-2 top-2 bg-white/95 px-2 py-1 text-[8px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C] md:right-3 md:top-3 md:px-2.5 md:text-[9px] md:tracking-[0.2em] shadow-sm">
+            {product.tag}
+          </span>
+        )}
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col">
@@ -51,22 +54,34 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
           </div>
         </div>
 
-        <button
-          type="button"
-          onClick={handleOrder}
-          className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#2C2C2C] px-3 py-3 text-[10px] font-medium uppercase tracking-wider text-white transition-opacity duration-300 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C5A880] md:gap-2 md:py-3.5 md:text-xs"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-3.5 w-3.5 shrink-0 md:h-4 md:w-4"
-            aria-hidden="true"
-          >
-            <path d="M12.04 2C6.58 2 2.15 6.36 2.15 11.72c0 1.92.54 3.79 1.57 5.44L2 22l5.02-1.63a10.1 10.1 0 0 0 5.02 1.35h.01c5.46 0 9.89-4.36 9.89-9.72C21.94 6.36 17.5 2 12.04 2Zm5.77 13.76c-.24.67-1.39 1.28-1.92 1.36-.49.08-1.12.11-1.81-.11-.42-.14-.96-.31-1.65-.61-2.9-1.25-4.79-4.18-4.93-4.37-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.05.65.5.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.28.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.21 1.36.28.14.44.12.6-.07.17-.19.7-.81.89-1.09.19-.28.38-.23.64-.14.26.1 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.69-.17 1.36Z" />
-          </svg>
-          Order via WhatsApp
-        </button>
+       {/* Dynamic Button Layer: Hand-crafted logic for Order vs Sold Out */}
+{product.isAvailable ? (
+  /* State 1: Active Button (Order via WhatsApp) */
+  <button
+    type="button"
+    onClick={handleOrder}
+    className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#2C2C2C] px-3 py-3 text-[10px] font-medium uppercase tracking-wider text-white transition-opacity duration-300 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C5A880] md:gap-2 md:py-3.5 md:text-xs"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-3.5 w-3.5 shrink-0 md:h-4 md:w-4"
+      aria-hidden="true"
+    >
+      <path d="M12.04 2C6.58 2 2.15 6.36 2.15 11.72c0 1.92.54 3.79 1.57 5.44L2 22l5.02-1.63a10.1 10.1 0 0 0 5.02 1.35h.01c5.46 0 9.89-4.36 9.89-9.72C21.94 6.36 17.5 2 12.04 2Zm5.77 13.76c-.24.67-1.39 1.28-1.92 1.36-.49.08-1.12.11-1.81-.11-.42-.14-.96-.31-1.65-.61-2.9-1.25-4.79-4.18-4.93-4.37-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.05.65.5.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.28.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.21 1.36.28.14.44.12.6-.07.17-.19.7-.81.89-1.09.19-.28.38-.23.64-.14.26.1 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.69-.17 1.36Z" />
+    </svg>
+    Order via WhatsApp
+  </button>
+) : (
+  /* State 2: Locked Disabled State (Beautiful Clean Sold Out View) */
+  <div 
+    className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-gray-200/80 px-3 py-3 text-[10px] font-bold tracking-widest text-gray-500 uppercase select-none cursor-not-allowed border-t border-gray-300 md:py-3.5 md:text-xs"
+  >
+    <span>🔒</span> SOLD OUT
+  </div>
+)}
+
       </div>
     </article>
   )
@@ -82,13 +97,12 @@ export default function ProductGrid({
   const [revealFrom, setRevealFrom] = useState(0)
 
   const filteredProducts = useMemo(() => {
-    const available = products.filter((item) => item.isAvailable)
-
+    // const available = products.filter((item) => item.isAvailable)
     if (activeFilter === 'ALL') {
-      return available
+      return products;
     }
 
-    return available.filter((item) => item.category === activeFilter)
+    return products.filter((item) => item.category === activeFilter)
   }, [activeFilter])
 
   const visibleProducts = filteredProducts.slice(0, itemsToShow)

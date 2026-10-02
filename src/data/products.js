@@ -49,7 +49,7 @@ export const products = [
     id: 'zv-001',
     name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
     originalPrice: "",
-    sellingPrice: "₹ 199",
+    sellingPrice: "₹ 220",
     category: 'MINIMAL CHAINS',
     // tag: '',
     imageUrl:
@@ -71,7 +71,7 @@ export const products = [
     id: 'zv-003',
     name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
     originalPrice: "",
-    sellingPrice: "₹ 199",
+    sellingPrice: "₹ 280",
     category: 'MINIMAL CHAINS',
     // tag: 'Aesthetic Core',
     imageUrl:
@@ -171,7 +171,7 @@ export const products = [
      id: 'zv-012',
     name: 'Anti-Tarnish Minimalist Golden Laurel Leaf Open Cuff Bangle ',
     originalPrice: "",
-    sellingPrice: "₹ 170",
+    sellingPrice: "₹ 220",
     category: 'ANTI-TARNISH', 
     // tag: 'Trendy Statement',
     imageUrl:cuffBangle1
@@ -226,7 +226,7 @@ export const products = [
     id: 'zv-017',
     name: 'Antique Gold-Plated Green Glass Stone Jhumka Earrings',
     originalPrice: "",
-    sellingPrice: "₹ 250",
+    sellingPrice: "₹ 340",
     category: 'ETHNIC ELEGANCE', 
     // tag: 'Trendy Statement',
     imageUrl:
@@ -237,7 +237,7 @@ export const products = [
     id: 'zv-018',
     name: 'Antique Gold-Plated Blue Glass Stone Jhumka Earrings',
     originalPrice: "",
-    sellingPrice: "₹ 250",
+    sellingPrice: "₹ 340",
     category: 'ETHNIC ELEGANCE', 
     // tag: 'Trendy Statement',
     imageUrl:
@@ -259,7 +259,7 @@ export const products = [
     id: 'zv-020',
     name: 'Silver-Toned Pearl & Rhinestone Crystal Cluster Stud Earrings',
     originalPrice: "",
-    sellingPrice: "₹ 199",
+    sellingPrice: "₹ 240",
     category: 'STATEMENT DROPS', 
     // tag: 'Trendy Statement',
     imageUrl:
@@ -281,9 +281,9 @@ export const products = [
     id: 'zv-022',
     name: 'Cute Plush Flower Hair Clip with Bunny Accent',
     originalPrice: "",
-    sellingPrice: "₹ 99",
+    sellingPrice: "₹ 190",
     category: 'LIFESTYLE ACCENTS', 
-    // tag: 'Trendy Statement',
+    tag: 'Set of 2',
     imageUrl:
     bunnyHairClip,
     isAvailable: true,
@@ -304,9 +304,9 @@ export const products = [
     id: 'zv-024',
     name: 'Luxury Heavy-Glow Satin Hair Ties & Ponytail Holders',
     originalPrice: "",
-    sellingPrice: "₹ 20",
+    sellingPrice: "₹ 120",
     category: 'LIFESTYLE ACCENTS', 
-    // tag: 'Trendy Statement',
+    tag: 'set of 3',
     imageUrl:
     scrunchies1,
     isAvailable: true,
