@@ -21,6 +21,10 @@ import crochet1 from '../assets/images/hair-accessories/crochet/crochet1.jpg'
 import bunnyHairClip from '../assets/images/hair-accessories/crochet/hair-clip-bunny.jpg'
 import clipImg1 from '../assets/images/hair-accessories/clip/clip1.jpg'
 import scrunchies1 from '../assets/images/hair-accessories/scrunchies/scrunchies1.jpg'
+import headband1 from '../assets/images/hair-accessories/scrunchies/headband1.jpg'
+import woodenbangle1 from '../assets/images/hand-accessories/wooden-bangle1.jpg'
+import chunkeykada1 from '../assets/images/hand-accessories/chunkey-kada1.jpg'
+import chunkeykada2 from '../assets/images/hand-accessories/chunkey-kada2.jpg'
 
 export const FILTER_TABS = [
   'ALL',
@@ -39,7 +43,7 @@ export const BUSINESS_PHONE = {
 }
 
 export const INSTAGRAM_URL =
-  'https://www.instagram.com/zelvora_lifestyle?utm_source=qr&stkn=MnJxeGVpN3Bubmoy'
+  'https://www.instagram.com/glow_glace13?utm_source=qr&stkn=MnJxeGVpN3Bubmoy'
 
 export const WHATSAPP_CHANNEL_URL =
   'https://whatsapp.com/channel/0029Vb8Z5CdA2pL9ZngNks2i'
@@ -49,7 +53,7 @@ export const products = [
     id: 'zv-001',
     name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
     originalPrice: "",
-    sellingPrice: "₹ 220",
+    sellingPrice: "₹ 280",
     category: 'MINIMAL CHAINS',
     // tag: '',
     imageUrl:
@@ -60,7 +64,7 @@ export const products = [
     id: 'zv-002',
     name: 'Luxe Anti-Tarnish Butterfly Pendant Chain',
     originalPrice: "",
-    sellingPrice: "₹ 199",
+    sellingPrice: "₹ 249",
     category: 'MINIMAL CHAINS',
     // tag: '',
     imageUrl:
@@ -102,7 +106,7 @@ export const products = [
   },
   {
     id: 'zv-006',
-    name: 'Chunky Gold Twisted Hoop Earrings',
+    name: 'Premium Minimalist Rectangle Hoop Earrings',
     originalPrice: "",
     sellingPrice: "₹ 149",
     category: 'ANTI-TARNISH',
@@ -113,7 +117,7 @@ export const products = [
   },
   {
     id: 'zv-007',
-    name: 'Chunky Gold Twisted Hoop Earrings',
+    name: 'Aesthetic Ginkgo Leaf Textured Hoops',
     originalPrice: "",
     sellingPrice: "₹ 149",
     category: 'ANTI-TARNISH',
@@ -124,7 +128,7 @@ export const products = [
   },
   {
     id: 'zv-008',
-    name: 'Chunky Gold Twisted Hoop Earrings',
+    name: 'Chic 18K Gold Plated Ribbed Heart Studs',
     originalPrice: "",
     sellingPrice: "₹ 149",
     category: 'ANTI-TARNISH',
@@ -259,7 +263,7 @@ export const products = [
     id: 'zv-020',
     name: 'Silver-Toned Pearl & Rhinestone Crystal Cluster Stud Earrings',
     originalPrice: "",
-    sellingPrice: "₹ 240",
+    sellingPrice: "₹ 260",
     category: 'STATEMENT DROPS', 
     // tag: 'Trendy Statement',
     imageUrl:
@@ -283,14 +287,14 @@ export const products = [
     originalPrice: "",
     sellingPrice: "₹ 190",
     category: 'LIFESTYLE ACCENTS', 
-    tag: 'Set of 2',
+    tag: 'Pack of 2',
     imageUrl:
     bunnyHairClip,
     isAvailable: true,
   },
         {
     id: 'zv-023',
-    name: 'Transparent Frosted Jelly Acrylic Bow Hair Pins (Pack of 2)',
+    name: 'Two Transparent Frosted Jelly Acrylic Bow Hair Pins',
     originalPrice: "",
     sellingPrice: "₹ 99",
     category: 'LIFESTYLE ACCENTS', 
@@ -304,11 +308,55 @@ export const products = [
     id: 'zv-024',
     name: 'Luxury Heavy-Glow Satin Hair Ties & Ponytail Holders',
     originalPrice: "",
-    sellingPrice: "₹ 120",
+    sellingPrice: "₹ 99",
     category: 'LIFESTYLE ACCENTS', 
-    tag: 'set of 3',
+    tag: 'pack of 3',
     imageUrl:
     scrunchies1,
+    isAvailable: true,
+  },
+  {
+    id: 'zv-025',
+    name: 'Premium Seamless Baby Nylon Headbands',
+    originalPrice: "",
+    sellingPrice: "₹ 110",
+    category: 'LIFESTYLE ACCENTS', 
+    tag: 'pack of 10',
+    imageUrl:
+    headband1,
+    isAvailable: true,
+  },
+   {
+    id: 'zv-026',
+    name: ' Stylish Chevron Print Wooden Bangle with Metallic Spacers',
+    originalPrice: "",
+    sellingPrice: "₹ 220",
+    category: 'LIFESTYLE ACCENTS', 
+    // tag: 'pack of 10',
+    imageUrl:
+    woodenbangle1,
+    isAvailable: true,
+  },
+    {
+    id: 'zv-027',
+    name: `Women's Trendy Resin Chunky Kada (1 Piece Only)`,
+    originalPrice: "",
+    sellingPrice: "₹ 299",
+    category: 'LIFESTYLE ACCENTS', 
+    // tag: 'pack of 10',
+    imageUrl:
+    chunkeykada1,
+    isAvailable: true,
+  },
+     {
+    id: 'zv-028',
+    name: `Glossy Pink Hexagon Resin Bangle `,
+    originalPrice: "",
+    sellingPrice: "₹ 250",
+    category: 'LIFESTYLE ACCENTS', 
+    // tag: 'pack of 10',
+    imageUrl:
+    chunkeykada2,
     isAvailable: true,
   },
 ]
