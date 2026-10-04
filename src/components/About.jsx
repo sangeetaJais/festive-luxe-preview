@@ -8,10 +8,10 @@ export default function About() {
       <div className="mx-auto max-w-3xl px-8 py-16 text-center sm:py-20 md:py-24">
         <h2
           id="about-heading"
-          className="font-serif text-2xl uppercase text-[#2C2C2C] sm:text-3xl md:text-4xl"
+          className="font-serif text-2xl uppercase text-[#2C2C2C] sm:text-3xl md:text-3xl"
           style={{ letterSpacing: '3px' }}
         >
-          The Krishaviá Story
+          The Krishavia Story
         </h2>
 
         <div className="mx-auto mt-8 max-w-2xl space-y-5 text-sm leading-relaxed text-[#2C2C2C]/80 sm:mt-10 sm:text-[15px] sm:leading-7">
