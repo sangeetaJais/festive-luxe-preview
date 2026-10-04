@@ -104,3 +104,9 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width:524px) {
+  .nav-logo-align {
+    margin-left: auto!important;
+  }
+}

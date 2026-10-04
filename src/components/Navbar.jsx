@@ -66,7 +66,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
           />
         </a>
 
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="nav-logo-align flex items-center gap-2 sm:gap-4">
           <a
             href="#about"
             className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/70 transition hover:text-[#2C2C2C] lg:flex"
