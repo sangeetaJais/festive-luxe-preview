@@ -1,7 +1,7 @@
 import { INSTAGRAM_URL } from '../data/products'
 import ContactPhone from './ContactPhone'
 import { InstagramIcon } from './icons'
-import krishayaLogo from '../assets/images/logo/logo-colorful.png'
+import krishayaLogo from '../assets/images/logo/final_logo.png'
 
 export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
   return (
@@ -62,7 +62,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
          <img 
             src={krishayaLogo} 
             alt="KRISHAYÁ Logo" 
-            className="w-38 h-auto md:w-44 object-contain filter drop-shadow-sm transition-all duration-300"
+            className="w-38 h-auto md:w-48 object-contain filter drop-shadow-sm transition-all duration-300"
           />
         </a>
 

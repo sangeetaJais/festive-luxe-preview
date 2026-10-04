@@ -2,7 +2,7 @@ import { INSTAGRAM_URL, WHATSAPP_CHANNEL_URL } from '../data/products'
 import ContactPhone from './ContactPhone'
 import { InstagramIcon } from './icons'
 import { FloralCorners } from './BrandAtmosphere'
-import krishayaLogo from '../assets/images/logo/logo-colorful.png'
+import krishayaLogo from '../assets/images/logo/final_logo.png'
 
 
 export default function Footer() {
@@ -17,7 +17,7 @@ export default function Footer() {
             <img 
               src={krishayaLogo} 
               alt="KRISHAYÁ Logo" 
-              className="w-36 h-auto md:w-42 object-contain filter drop-shadow-sm transition-all duration-300"
+              className="w-36 h-auto md:w-48 object-contain filter drop-shadow-sm transition-all duration-300"
             />
           </a>
         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-[#2C2C2C]/55 transition-opacity duration-300 hover:opacity-55"
             >
               <InstagramIcon className="h-3.5 w-3.5" />
-              @zelvora_lifestyle
+              @glow_glace13
             </a>
             <a
               href={WHATSAPP_CHANNEL_URL}
