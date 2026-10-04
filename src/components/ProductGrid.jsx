@@ -60,7 +60,7 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
   <button
     type="button"
     onClick={handleOrder}
-    className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#2C2C2C] px-3 py-3 text-[10px] font-medium uppercase tracking-wider text-white transition-opacity duration-300 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C5A880] md:gap-2 md:py-3.5 md:text-xs"
+    className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#2C2C2C] px-2 py-3 text-[10px] font-medium uppercase tracking-wider text-white transition-opacity duration-300 hover:opacity-85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C5A880] md:gap-2 md:py-3.5 md:text-xs"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

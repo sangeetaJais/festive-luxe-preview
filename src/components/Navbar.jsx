@@ -62,7 +62,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
          <img 
             src={krishayaLogo} 
             alt="KRISHAYÁ Logo" 
-            className="w-38 h-auto md:w-48 object-contain filter drop-shadow-sm transition-all duration-300"
+            className="w-28 h-auto md:w-48 object-contain filter drop-shadow-sm transition-all duration-300"
           />
         </a>
 
