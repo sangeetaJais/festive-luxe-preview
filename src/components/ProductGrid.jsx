@@ -57,7 +57,7 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
        {/* Dynamic Button Layer: Hand-crafted logic for Order vs Sold Out */}
 {product.isAvailable ? (
   /* State 1: Active Button (Order via WhatsApp) */
-  <a
+ <a
   href="https://wa.me"
   target="_blank"
   rel="noopener noreferrer"
@@ -73,6 +73,7 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
   </svg>
   Order via WhatsApp
 </a>
+
 
   // <button
   //   type="button"
