@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { FILTER_TABS, products } from '../data/products'
-import { buildWhatsAppOrderUrl } from '../utils/whatsapp'
+// import { buildWhatsAppOrderUrl } from '../utils/whatsapp'
 import qrImg from '../assets/Images/logo/qr.jpg';
 
 const INITIAL_VISIBLE = 8
