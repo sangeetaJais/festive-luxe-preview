@@ -68,10 +68,17 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
   const [revealFrom, setRevealFrom] = useState(0)
   const [activeQrProduct, setActiveQrProduct] = useState(null)
 
-  const filteredProducts = useMemo(() => {
-    if (activeFilter === 'ALL') return products
-    return products.filter((item) => item.category === activeFilter)
+    const filteredProducts = useMemo(() => {
+    if (activeFilter === 'ALL') {
+      return products;
+    }
+
+    // 🎯 यह जादुई लाइन स्पेलिंग के छोटे-बड़े अक्षरों (Case Mismatch) के झंझट को हमेशा के लिए ख़त्म कर देगी!
+    return products.filter((item) => 
+      item.category && item.category.trim().toUpperCase() === activeFilter.trim().toUpperCase()
+    );
   }, [activeFilter])
+
 
   const visibleProducts = filteredProducts.slice(0, itemsToShow)
   const hasMore = filteredProducts.length > itemsToShow
@@ -110,7 +117,7 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
                         key={tab}
                         type="button"
                         onClick={() => handleFilterChange(tab)}
-                        className={`shrink-0 border-b-2 px-1 pb-2 text-xs font-semibold tracking-widest uppercase transition-colors ${isActive ? 'border-[#2C2C2C] text-[#2C2C2C]' : 'border-transparent text-[#2C2C2C]/40 hover:text-[#2C2C2C]'}`}
+                        className={`shrink-0 border border-1 border-gray-200 bg-white text-[black] px-3 py-2 text-[10px] font-semibold tracking-widest uppercase transition-colors ${isActive ? ' bg-black text-[white]' : 'border-transparent text-[#2C2C2C]/40 hover:text-[#2C2C2C] hover:border-gray-400'}`}
                       >
                         {tab}
                       </button>
