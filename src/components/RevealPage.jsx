@@ -62,75 +62,75 @@ function FeatureIcon({ type }) {
 }
 
 export default function RevealPage() {
-//   return (
-//     <section
-//       aria-label="Launch reveal"
-//       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#F4EFE6]"
-//     >
-//       <ChampagneMesh pulse />
+  return (
+    <section
+      aria-label="Launch reveal"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#F4EFE6]"
+    >
+      <ChampagneMesh pulse />
 
-//       <div
-//         className="brand-accent-pulse pointer-events-none absolute left-1/2 top-1/2 h-[min(72vw,460px)] w-[min(72vw,460px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F7C9D4]/25 blur-3xl"
-//         aria-hidden="true"
-//       />
+      <div
+        className="brand-accent-pulse pointer-events-none absolute left-1/2 top-1/2 h-[min(72vw,460px)] w-[min(72vw,460px)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F7C9D4]/25 blur-3xl"
+        aria-hidden="true"
+      />
 
-//       <FloralCorners idPrefix="reveal" float size="reveal" />
+      <FloralCorners idPrefix="reveal" float size="reveal" />
 
-//       {/* Stable centerpiece — no entrance motion for video shoot */}
-//       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-6 py-28 text-center">
-//         <p className="mb-4 text-xs font-medium uppercase tracking-[6px] text-gray-500">
-//           Est. 2026
-//         </p>
+      {/* Stable centerpiece — no entrance motion for video shoot */}
+      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center px-6 py-28 text-center">
+        <p className="mb-4 text-xs font-medium uppercase tracking-[6px] text-gray-500">
+          Est. 2026
+        </p>
 
-//       <div className="flex justify-center items-center ">
-//         <img 
-//           src={krishayaLogo} 
-//           alt="KRISHAYÁ Logo" 
-//           className="w-48 h-auto md:w-72 object-contain filter drop-shadow-sm transition-all duration-300"
-//         />
-//       </div>
-//         {/* <h1 className="font-serif text-4xl font-bold uppercase tracking-[14px] text-[#2C2C2C] drop-shadow-sm filter md:text-6xl">
-//           KRISHAYÁ
-//         </h1>
+      <div className="flex justify-center items-center ">
+        <img 
+          src={krishayaLogo} 
+          alt="KRISHAYÁ Logo" 
+          className="w-48 h-auto md:w-72 object-contain filter drop-shadow-sm transition-all duration-300"
+        />
+      </div>
+        {/* <h1 className="font-serif text-4xl font-bold uppercase tracking-[14px] text-[#2C2C2C] drop-shadow-sm filter md:text-6xl">
+          KRISHAYÁ
+        </h1>
 
-//         <p className="tracking-[6px] text-[10px] md:text-xs font-semibold text-gray-500 uppercase mt-2 text-center">
-//   LIFESTYLE COLLECTIVE
-// </p> */}
+        <p className="tracking-[6px] text-[10px] md:text-xs font-semibold text-gray-500 uppercase mt-2 text-center">
+  LIFESTYLE COLLECTIVE
+</p> */}
 
 
-//         <div
-//           className="mx-auto mt-7 h-px w-20 bg-gradient-to-r from-transparent via-[#2C2C2C]/30 to-transparent"
-//           aria-hidden="true"
-//         />
+        <div
+          className="mx-auto mt-7 h-px w-20 bg-gradient-to-r from-transparent via-[#2C2C2C]/30 to-transparent"
+          aria-hidden="true"
+        />
 
-//         <p className="mt-5 text-[10px] font-light uppercase tracking-[0.42em] text-[#2C2C2C]/55 sm:text-[11px]">
-//           Launched by Sangeeta Jaiswal
-//         </p>
+        <p className="mt-5 text-[10px] font-light uppercase tracking-[0.42em] text-[#2C2C2C]/55 sm:text-[11px]">
+          Launched by Sangeeta Jaiswal
+        </p>
 
-//         <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-1 gap-y-3 sm:gap-x-2">
-//           {FEATURES.map((feature, index) => (
-//             <li
-//               key={feature.id}
-//               className="inline-flex items-center gap-x-1 sm:gap-x-2"
-//             >
-//               <span className="inline-flex items-center gap-1.5 text-[9px] font-medium uppercase tracking-[0.22em] text-[#2C2C2C]/55 sm:text-[10px]">
-//                 <span className="text-[#C5A880]">
-//                   <FeatureIcon type={feature.icon} />
-//                 </span>
-//                 {feature.label}
-//               </span>
-//               {index < FEATURES.length - 1 ? (
-//                 <span
-//                   className="pl-1 text-[9px] text-[#2C2C2C]/30 sm:pl-2 sm:text-[10px]"
-//                   aria-hidden="true"
-//                 >
-//                   ·
-//                 </span>
-//               ) : null}
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     </section>
-//   )
+        <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-1 gap-y-3 sm:gap-x-2">
+          {FEATURES.map((feature, index) => (
+            <li
+              key={feature.id}
+              className="inline-flex items-center gap-x-1 sm:gap-x-2"
+            >
+              <span className="inline-flex items-center gap-1.5 text-[9px] font-medium uppercase tracking-[0.22em] text-[#2C2C2C]/55 sm:text-[10px]">
+                <span className="text-[#C5A880]">
+                  <FeatureIcon type={feature.icon} />
+                </span>
+                {feature.label}
+              </span>
+              {index < FEATURES.length - 1 ? (
+                <span
+                  className="pl-1 text-[9px] text-[#2C2C2C]/30 sm:pl-2 sm:text-[10px]"
+                  aria-hidden="true"
+                >
+                  ·
+                </span>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
 }
