@@ -72,7 +72,7 @@ export default function WhatsAppChannel() {
               href={WHATSAPP_CHANNEL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-2.5 bg-[#2C2C2C] px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#2C2C2C]/90"
+              className="inline-flex shrink-0 items-center gap-2.5 bg-[#2C2C2C] px-5 md:px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#2C2C2C]/90"
             >
               <WhatsAppChannelIcon className="h-4 w-4" />
               Join WhatsApp Channel

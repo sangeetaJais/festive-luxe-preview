@@ -139,7 +139,7 @@ export const products = [
   },
   {
     id: 'zv-009',
-    name: 'Chunky Gold Twisted Hoop Earrings',
+    name: ' Chunky Gold Rectangular Hoop Earrings',
     originalPrice: "",
     sellingPrice: "₹ 249",
     category: 'ANTI-TARNISH',
@@ -151,7 +151,7 @@ export const products = [
    
    {
     id: 'zv-010',
-    name: 'Chunky Gold Twisted Hoop Earrings',
+    name: 'Textured Gold Fan Leaf Studs',
     originalPrice: "",
     sellingPrice: "₹ 289",
     category: 'ANTI-TARNISH', 
@@ -162,7 +162,7 @@ export const products = [
   },
     {
     id: 'zv-011',
-    name: 'Chunky Gold Twisted Hoop Earrings',
+    name: 'Textured Golden Heart Studs',
     originalPrice: "",
     sellingPrice: "₹ 249",
     category: 'ANTI-TARNISH', 
@@ -173,7 +173,7 @@ export const products = [
   },
    {
      id: 'zv-012',
-    name: 'Anti-Tarnish Minimalist Golden Laurel Leaf Open Cuff Bangle ',
+    name: 'Anti-Tarnish Golden Laurel Leaf Open Cuff Bracelet',
     originalPrice: "",
     sellingPrice: "₹ 220",
     category: 'ANTI-TARNISH', 
@@ -250,7 +250,7 @@ export const products = [
   },
     {
     id: 'zv-019',
-    name: 'Antique Gold-Plated Emerald Green Peacock Kundan Drop Earrings',
+    name: 'Antique Gold-Plated Emerald blue Peacock Kundan Drop Earrings',
     originalPrice: "",
     sellingPrice: "₹ 499",
     category: 'ETHNIC ELEGANCE', 

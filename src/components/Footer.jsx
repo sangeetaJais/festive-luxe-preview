@@ -27,9 +27,9 @@ export default function Footer() {
             Customer Care
           </p>
           <ContactPhone />
-          <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/45">
+          {/* <p className="mt-3 text-[11px] font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/45">
             Customer Care · Pan-India Expansion Underway
-          </p>
+          </p> */}
         </div>
 
         <div className="flex flex-col items-center text-center lg:items-end lg:text-right">

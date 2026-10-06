@@ -45,7 +45,7 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
         {product.isAvailable ? (
           <button
             onClick={() => setActiveQrProduct(product)}
-            className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#232323] px-3 py-3 text-[10px] font-bold tracking-widest text-white uppercase transition-all duration-200 hover:bg-black active:scale-[0.99] md:py-3.5 md:text-xs"
+            className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#232323] px-2 py-3 text-[10px] font-bold tracking-widest text-white uppercase transition-all duration-200 hover:bg-black active:scale-[0.99] md:py-3.5 md:text-xs md:px-3"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5 shrink-0 md:h-4 md:w-4">
               <path d="M12.04 2C6.58 2 2.15 6.36 2.15 11.72c0 1.92.54 3.79 1.57 5.44L2 22l5.02-1.63a10.1 10.1 0 0 0 5.02 1.35h.01c5.46 0 9.89-4.36 9.89-9.72C21.94 6.36 17.5 2 12.04 2Zm5.77 13.76c-.24.67-1.39 1.28-1.92 1.36-.49.08-1.12.11-1.81-.11-.42-.14-.96-.31-1.65-.61-2.9-1.25-4.79-4.18-4.93-4.37-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.05.65.5.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.28.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.21 1.36.28.14.44.12.6-.07.17-.19.7-.81.89-1.09.19-.28.38-.23.64-.14.26.1 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.69-.17 1.36Z" />
@@ -117,7 +117,12 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
                         key={tab}
                         type="button"
                         onClick={() => handleFilterChange(tab)}
-                        className={`shrink-0 border border-1 border-gray-200 bg-white text-[black] px-3 py-2 text-[10px] font-semibold tracking-widest uppercase transition-colors ${isActive ? ' bg-[#000000] text-[white]' : 'border-transparent text-[#2C2C2C]/40 hover:text-[#2C2C2C] hover:border-gray-400'}`}
+                        className={`shrink-0 border border-1 border-gray-200 px-3 py-2 text-[10px] font-semibold tracking-widest uppercase transition-all duration-200 ${
+                          isActive 
+                            ? 'bg-[#000000] text-white border-black' 
+                            : 'bg-white text-black text-[#2C2C2C]/40 hover:text-[#2C2C2C] hover:border-gray-400'
+                        }`}
+                                          
                       >
                         {tab}
                       </button>
