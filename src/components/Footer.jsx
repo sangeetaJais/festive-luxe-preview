@@ -7,7 +7,7 @@ import krishayaLogo from '../assets/images/logo/final_logo.png'
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[#2C2C2C]/10 bg-cream">
+    <footer className="relative overflow-hidden border-t border-[#2C2C2C]/10 bg-[#ffffe0]">
       {/* Subtle bottom-baseline floral accent only */}
       <FloralCorners idPrefix="footer" size="section" placement="bottom" />
 

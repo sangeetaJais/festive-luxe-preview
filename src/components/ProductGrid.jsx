@@ -9,7 +9,7 @@ const PAGE_SIZE = 8
 function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocation, setActiveQrProduct }) {
   return (
     <article className="group flex h-full min-w-0 flex-col overflow-hidden border border-[#2C2C2C]/12 bg-white">
-      <div className="relative h-[200px] w-full shrink-0 overflow-hidden bg-cream md:h-[320px]">
+      <div className="relative h-[200px] w-full shrink-0 overflow-hidden md:h-[320px]">
         <img
           src={product.imageUrl}
           alt={product.name}
@@ -96,7 +96,7 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
 
   return (
     <>
-      <section id="collection" className="border-y border-[#2C2C2C]/10 bg-cream">
+      <section id="collection" className="border-y border-[#2C2C2C]/10">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="mb-10 border-b border-[#2C2C2C]/10 pb-8 sm:mb-12">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
@@ -117,7 +117,7 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
                         key={tab}
                         type="button"
                         onClick={() => handleFilterChange(tab)}
-                        className={`shrink-0 border border-1 border-gray-200 bg-white text-[black] px-3 py-2 text-[10px] font-semibold tracking-widest uppercase transition-colors ${isActive ? ' bg-black text-[white]' : 'border-transparent text-[#2C2C2C]/40 hover:text-[#2C2C2C] hover:border-gray-400'}`}
+                        className={`shrink-0 border border-1 border-gray-200 bg-white text-[black] px-3 py-2 text-[10px] font-semibold tracking-widest uppercase transition-colors ${isActive ? ' bg-[#000000] text-[white]' : 'border-transparent text-[#2C2C2C]/40 hover:text-[#2C2C2C] hover:border-gray-400'}`}
                       >
                         {tab}
                       </button>

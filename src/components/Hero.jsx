@@ -4,7 +4,7 @@ export default function Hero({ onExplore, onVerifyLocation }) {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b border-[#2C2C2C]/10 bg-cream"
+      className="relative overflow-hidden border-b border-[#2C2C2C]/10 bg-[#ffffe0]"
     >
       {/* Subtle top-boundary floral accent only */}
       <FloralCorners idPrefix="hero" size="section" placement="top" />
@@ -50,13 +50,13 @@ export default function Hero({ onExplore, onVerifyLocation }) {
             </svg>
           </a>
 
-          <button
+          {/* <button
             type="button"
             onClick={onVerifyLocation}
             className="inline-flex items-center gap-2 border border-[#2C2C2C]/25 bg-white px-8 py-3.5 text-xs font-medium uppercase tracking-[0.22em] text-[#2C2C2C] transition hover:border-[#C5A880] hover:text-[#C5A880]"
           >
             Check Delivery Availability
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

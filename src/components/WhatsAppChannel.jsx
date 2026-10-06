@@ -18,7 +18,7 @@ export default function WhatsAppChannel() {
   return (
     <section
       aria-labelledby="whatsapp-channel-heading"
-      className="border-t border-[#2C2C2C]/10 bg-cream"
+      className="border-t border-[#2C2C2C]/10 bg-[#ffffe0]"
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
         <div className="relative overflow-hidden border border-[#2C2C2C]/10 bg-white">

@@ -155,7 +155,7 @@ function Storefront() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen">
       <Navbar
         onOpenLocation={openLocationModal}
         checkoutUnlocked={checkoutUnlocked}
@@ -203,7 +203,7 @@ export default function App() {
 
   return (
     <>
-      <RevealPage />
+      {/* <RevealPage /> */}
       <Storefront />
 
     </>

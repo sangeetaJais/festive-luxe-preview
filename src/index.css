@@ -5,19 +5,19 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #F4EFE6;
+    background-color: #ffffe0;
   }
 
   body {
-    @apply bg-cream text-charcoal font-sans antialiased;
+    @apply text-charcoal font-sans antialiased;
     margin: 0;
     min-width: 320px;
-    background-color: #F4EFE6;
+    background-color: #ffffe0;
   }
 
   #root {
     min-height: 100%;
-    background-color: #F4EFE6;
+    background-color: #ffffe0;
   }
 
   ::selection {

@@ -3,7 +3,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="scroll-mt-24 border-t border-[#2C2C2C]/10 bg-cream"
+      className="scroll-mt-24 border-t border-[#2C2C2C]/10 bg-[#ffffe0]"
     >
       <div className="mx-auto max-w-3xl px-8 py-16 text-center sm:py-20 md:py-24">
         <h2

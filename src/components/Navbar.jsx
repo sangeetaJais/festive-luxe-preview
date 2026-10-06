@@ -5,7 +5,7 @@ import krishayaLogo from '../assets/images/logo/final_logo.png'
 
 export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#2C2C2C]/10 bg-cream">
+    <header className="sticky top-0 z-50 border-b border-[#2C2C2C]/10 bg-[#ffffe0]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 sm:gap-6">
           <a
@@ -29,7 +29,7 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
             </svg>
             Shop
           </a>
-          <button
+          {/* <button
             type="button"
             onClick={onOpenLocation}
             className="hidden items-center gap-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[#2C2C2C]/70 transition hover:text-[#2C2C2C] md:flex"
@@ -55,16 +55,18 @@ export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
               />
             </svg>
             {checkoutUnlocked ? 'Area Set' : 'Delivery'}
-          </button>
+          </button> */}
         </div>
 
+        <div className="w-28 h-auto md:w-48">
         <a href="#top" className="text-center">
          <img 
             src={krishayaLogo} 
             alt="KRISHAYÁ Logo" 
-            className="w-28 h-auto md:w-48 object-contain filter drop-shadow-sm transition-all duration-300"
+            className="object-cover"
           />
         </a>
+        </div>
 
         <div className="nav-logo-align flex items-center gap-2 sm:gap-4">
           <a
