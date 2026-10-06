@@ -5,7 +5,7 @@ import krishayaLogo from '../assets/images/logo/final_logo.png'
 
 export default function Navbar({ onOpenLocation, checkoutUnlocked }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#2C2C2C]/10 bg-[#ffffe0]">
+    <header className="sticky top-0 z-50 border-b border-[#2C2C2C]/10 bg-[#F9F6F0]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4 sm:gap-6">
           <a

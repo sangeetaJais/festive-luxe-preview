@@ -4,7 +4,7 @@ export default function Hero({ onExplore, onVerifyLocation }) {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b border-[#2C2C2C]/10 bg-[#ffffe0]"
+      className="relative overflow-hidden border-b border-[#2C2C2C]/10 bg-[#F9F6F0]"
     >
       {/* Subtle top-boundary floral accent only */}
       <FloralCorners idPrefix="hero" size="section" placement="top" />
