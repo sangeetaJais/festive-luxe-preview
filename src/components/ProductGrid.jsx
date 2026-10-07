@@ -317,29 +317,33 @@ const generatedMessage =  cart.length > 0
       </div>
 
       <div className="flex flex-col gap-1.5 mt-2 shrink-0">
-        <button 
-          disabled={cart.length === 0}
-          onClick={() => {
-            const totalPrice = cart.reduce((total, item) => total + parseInt(item.sellingPrice.replace(/[^\d]/g, '') || 0), 0);
-            const itemsList = cart.map((item, idx) => `${idx + 1}. ${item.name} - ${item.sellingPrice}`).join('\n');
-            
-            const combinedText = `Hello Team KRISHAVIÁ! 💎✨\n\nI want to secure my booking for multiple items:\n${itemsList}\n\nTotal Bill Amount: ₹ ${totalPrice} 📦\n\nDelivery Details:\n📌 My Name:\n📍 Full Address:\n📱 Alternative Contact Number:`;
-            
-            navigator.clipboard.writeText(combinedText);
-            setCopiedMsg(true);
-            
-            setTimeout(() => {
-              setCopiedMsg(false);
-              setIsCartOpen(false);
-              setCart([]); // ऑर्डर सबमिट होते ही कार्ट खाली
-              localStorage.removeItem('krishavia_cart');
-              window.open("https://wa.me", "_blank"); // सीधे व्हाट्सऐप पर लैंड
-            }, 1200);
-          }} 
-          className={`w-full font-bold py-2.5 text-[10px] tracking-widest uppercase transition-all duration-200 border rounded-none ${cart.length === 0 ? 'bg-gray-300 border-gray-300 text-gray-500 cursor-not-allowed' : 'bg-[#232323] text-white border-black hover:bg-black'}`}
-        >
-          {copiedMsg ? '✓ Copied & Opening WhatsApp...' : '📋 Copy Details & Close'}
-        </button>
+       <button 
+  disabled={cart.length === 0}
+  onClick={() => {
+    // 1. पूरा कूरियर फॉर्म टेक्स्ट अपने आप कॉपी होगा
+    navigator.clipboard.writeText(generatedMessage);
+    setCopiedMsg(true);
+    
+    // 2. 1.2 सेकंड का समय देकर पॉप-अप बंद होगा और सीधे व्हाट्सऐप ऐप खुलेगा
+    setTimeout(() => {
+      setCopiedMsg(false);
+      setIsCartOpen(false);
+      setCart([]); // ऑर्डर होते ही कार्ट खाली
+      localStorage.removeItem('krishavia_cart');
+      
+      // 🎯 यह जादुई ऑफिशियल गेटवे बिना नंबर सेव कराए सीधे व्हाट्सऐप ऐप खोल देगा!
+      window.open("https://whatsapp.com", "_blank");
+    }, 1200);
+  }} 
+  className={`w-full font-bold py-2.5 text-[10px] tracking-widest uppercase transition-all duration-200 border rounded-none ${
+    cart.length === 0 
+      ? 'bg-gray-300 border-gray-300 text-gray-500 cursor-not-allowed' 
+      : 'bg-[#232323] text-white border-black hover:bg-black'
+  }`}
+>
+  {copiedMsg ? '✓ Copied & Opening WhatsApp...' : '📋 Copy Details & Close'}
+</button>
+
         
         <button 
           onClick={() => {
