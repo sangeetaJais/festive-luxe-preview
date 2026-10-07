@@ -66,7 +66,14 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
   const [activeFilter, setActiveFilter] = useState('ALL')
   const [itemsToShow, setItemsToShow] = useState(INITIAL_VISIBLE)
   const [revealFrom, setRevealFrom] = useState(0)
-  const [activeQrProduct, setActiveQrProduct] = useState(null)
+  // const [activeQrProduct, setActiveQrProduct] = useState(null)
+
+    const [activeQrProduct, setActiveQrProduct] = useState(null)
+  const [copiedNum, setCopiedNum] = useState(false)
+  const [copiedMsg, setCopiedMsg] = useState(false)
+
+   const rawNumber = "919131767938" 
+  const displayWhatsAppNumber = "+91 9131767938"
 
     const filteredProducts = useMemo(() => {
     if (activeFilter === 'ALL') {
@@ -82,6 +89,27 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
 
   const visibleProducts = filteredProducts.slice(0, itemsToShow)
   const hasMore = filteredProducts.length > itemsToShow
+
+    // Clipboard functions
+  const handleCopyNumber = () => {
+    navigator.clipboard.writeText(rawNumber)
+    setCopiedNum(true)
+    setTimeout(() => setCopiedNum(false), 2000) // 2 second baad 'Copied' text hat jayega
+  }
+
+  const handleCopyMessage = (msg) => {
+    navigator.clipboard.writeText(msg)
+    setCopiedMsg(true)
+    setTimeout(() => setCopiedMsg(false), 2000)
+  }
+
+  // Jis product par user ne click kiya hai, uske naam aur price ke hisab se text generate hoga
+
+const generatedMessage = activeQrProduct 
+  ? `Hello Team KRISHAVIÁ! 💎✨\n\nI really love your collection on the website and I want to secure my booking for:\n• Product: ${activeQrProduct.name}\n• Price: ${activeQrProduct.sellingPrice}\n\nHere are my delivery details for Drop 01:\n📌 My Name: \n📍 Address: \n📱 Alternative Contact Number:`
+  : '';
+
+
 
   const handleFilterChange = (tab) => {
     setActiveFilter(tab)
@@ -159,10 +187,82 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
         </div>
       </section>
 
+            {/* 🎯 USER PERSPECTIVE SMART POP-UP MODAL */}
+     {/* 🎯 PREMIUM MINIMALIST POP-UP MODAL */}
+{/* 🎯 KRISHAVIÁ PREMIUM MINIMAL POP-UP (RESPONSIVE & FIXED HEIGHT) */}
+{activeQrProduct && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <div className="bg-white p-5 rounded-none max-w-sm w-full shadow-2xl relative border border-gray-100 font-sans max-h-[90vh] overflow-y-auto flex flex-col justify-between">
       
+      <div>
+        {/* Top Close Cross */}
+        <button 
+          onClick={() => setActiveQrProduct(null)}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-sm p-1 transition-colors"
+        >
+          ✕
+        </button>
+
+        {/* Brand Header */}
+        <h3 className="font-serif text-xs font-bold tracking-widest text-[#2C2C2C] text-center mb-4 uppercase">
+          SECURE YOUR BOOKING 💎
+        </h3>
+
+        {/* Combined Informative Container */}
+        <div className="mb-4 bg-gray-50/70 p-3 rounded-none border border-gray-200/40">
+          <div className="flex items-center justify-between border-b border-gray-200/60 pb-2 mb-2">
+            <span className="text-[9px] font-bold tracking-widest text-gray-400 uppercase">WhatsApp Order To</span>
+            <span className="font-mono text-xs font-bold text-gray-800 tracking-wide">{displayWhatsAppNumber}</span>
+          </div>
+          
+          <span className="block text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-1">
+            Order Template Text
+          </span>
+          <div className="text-[11px] text-gray-600 bg-white p-2.5 rounded-none border border-gray-100 whitespace-pre-line text-left leading-relaxed max-h-[140px] overflow-y-auto font-medium tracking-wide">
+            {`Hello Team KRISHAVIÁ! 💎✨\n\nI want to secure my booking for:\n• Product: ${activeQrProduct.name}\n• Price: ${activeQrProduct.sellingPrice}\n\nDelivery Details:\n📌 My Name:\n📍 Address:\n📱 Alternative Contact:`}
+          </div>
+        </div>
+      </div>
+
+      {/* Action Buttons at Bottom */}
+      <div className="flex flex-col gap-1.5 mt-2 shrink-0">
+        <button 
+          onClick={() => {
+            const combinedText = `ORDER TO: ${displayWhatsAppNumber}\n\nHello Team KRISHAVIÁ! 💎✨\n\nI want to secure my booking for:\n• Product: ${activeQrProduct.name}\n• Price: ${activeQrProduct.sellingPrice}\n\nDelivery Details:\n📌 My Name:\n📍 Address:\n📱 Alternative Contact:`;
+            navigator.clipboard.writeText(combinedText);
+            
+            // Text change logic handles state smoothly instead of harsh windows alert
+            setCopiedMsg(true);
+            setTimeout(() => {
+              setCopiedMsg(false);
+              setActiveQrProduct(null); // Clipboard dynamic update hone ke baad close
+            }, 1200);
+          }} 
+          className="w-full bg-[#232323] text-white hover:bg-black font-bold py-2.5 text-[10px] tracking-widest uppercase transition-all duration-200 border border-black rounded-none"
+        >
+          {copiedMsg ? '✓ Copied to Clipboard' : '📋 Copy Details & Close'}
+        </button>
+        
+        <button 
+          onClick={() => setActiveQrProduct(null)} 
+          className="w-full bg-transparent text-gray-400 hover:text-gray-600 font-medium py-1 text-[9px] tracking-widest uppercase transition-all rounded-none"
+        >
+          Cancel
+        </button>
+      </div>
+
+    </div>
+  </div>
+)}
+
+
+    </>
+  )
+}
+
 
       {/* 🎯 आपका शुद्ध सफ़ेद पॉप-अप - बिना किसी लिंक या बटन के झंझट के */}
-      {activeQrProduct && (
+      {/* {activeQrProduct && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
           <div className="w-full max-w-md bg-white p-6 shadow-2xl text-center relative border border-gray-100">
             <button
@@ -186,8 +286,6 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
 </p>
           </div>
         </div>
-      )}
+      )} */}
       
-    </>
-  )
-}
+    
