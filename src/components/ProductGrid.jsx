@@ -6,7 +6,7 @@ import qrImg from '../assets/images/logo/qr.jpg';
 const INITIAL_VISIBLE = 8
 const PAGE_SIZE = 8
 
-function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocation, setActiveQrProduct }) {
+function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocation, setActiveQrProduct,setCart, cart }) {
   return (
     <article className="group flex h-full min-w-0 flex-col overflow-hidden border border-[#2C2C2C]/12 bg-white">
       <div className="relative h-[200px] w-full shrink-0 overflow-hidden md:h-[320px]">
@@ -42,21 +42,52 @@ function ProductCard({ product, checkoutUnlocked, locationArea, onRequireLocatio
           </div>
         </div>
 
-        {product.isAvailable ? (
-          <button
-            onClick={() => setActiveQrProduct(product)}
-            className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#232323] px-2 py-3 text-[10px] font-bold tracking-widest text-white uppercase transition-all duration-200 hover:bg-black active:scale-[0.99] md:py-3.5 md:text-xs md:px-3"
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5 shrink-0 md:h-4 md:w-4">
-              <path d="M12.04 2C6.58 2 2.15 6.36 2.15 11.72c0 1.92.54 3.79 1.57 5.44L2 22l5.02-1.63a10.1 10.1 0 0 0 5.02 1.35h.01c5.46 0 9.89-4.36 9.89-9.72C21.94 6.36 17.5 2 12.04 2Zm5.77 13.76c-.24.67-1.39 1.28-1.92 1.36-.49.08-1.12.11-1.81-.11-.42-.14-.96-.31-1.65-.61-2.9-1.25-4.79-4.18-4.93-4.37-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.09.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.05.65.5.24.57.81 1.97.88 2.11.07.14.12.31.02.5-.1.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.28.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.21 1.36.28.14.44.12.6-.07.17-.19.7-.81.89-1.09.19-.28.38-.23.64-.14.26.1 1.65.78 1.93.92.28.14.47.21.54.33.07.12.07.69-.17 1.36Z" />
-            </svg>
-            Order via WhatsApp
-          </button>
+                {product.isAvailable ? (
+          (() => {
+            // 🎯 प्रॉप्स का झंझट ख़त्म! सीधे लोकल स्टोरेज से लाइव कार्ट रीड करेंगे ताकि डुप्लीकेट न हो
+            const savedCartRaw = localStorage.getItem('krishavia_cart');
+            const localCart = savedCartRaw ? JSON.parse(savedCartRaw) : [];
+            const isAlreadyInCart = localCart.some(item => item.id === product.id);
+            
+            return isAlreadyInCart ? (
+              /* State A: जब प्रोडक्ट पहले से शॉपिंग बैग में ऐड हो चुका हो */
+              <button
+                type="button"
+                disabled
+                className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-gray-400 text-white text-[10px] font-bold tracking-widest uppercase py-3 px-3 cursor-not-allowed border-t border-gray-300 md:py-3.5 md:text-xs"
+              >
+                ADDED TO BAG ✓ 
+              </button>
+            ) : (
+              /* State B: जब प्रोडक्ट कार्ट में ऐड नहीं हुआ हो (Normal Active State) */
+              <button
+                type="button"
+                onClick={() => {
+                  setCart((prevCart) => {
+                    // दोबारा री-चेक करेंगे ताकि 1% भी डुप्लीकेट ऐड न हो सके
+                    const isExist = prevCart.find(item => item.id === product.id);
+                    if (isExist) return prevCart;
+                    
+                    const newCart = [...prevCart, product];
+                    localStorage.setItem('krishavia_cart', JSON.stringify(newCart));
+                    return newCart;
+                  });
+                }}
+                className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-[#232323] px-3 py-3 text-[10px] font-bold tracking-widest text-white uppercase transition-all duration-200 hover:bg-black active:scale-[0.99] md:py-3.5 md:text-xs"
+              >
+                ADD TO CART 
+              </button>
+            );
+          })()
         ) : (
+          /* State 2: Locked Disabled State (Sold Out View) */
           <div className="mt-auto flex w-full shrink-0 items-center justify-center gap-1.5 bg-gray-200/80 px-3 py-3 text-[10px] font-bold tracking-widest text-gray-500 uppercase select-none cursor-not-allowed border-t border-gray-300 md:py-3.5 md:text-xs">
             <span>🔒</span> SOLD OUT
           </div>
         )}
+
+
+
       </div>
     </article>
   )
@@ -67,8 +98,12 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
   const [itemsToShow, setItemsToShow] = useState(INITIAL_VISIBLE)
   const [revealFrom, setRevealFrom] = useState(0)
   // const [activeQrProduct, setActiveQrProduct] = useState(null)
-
-    const [activeQrProduct, setActiveQrProduct] = useState(null)
+ const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem('krishavia_cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+  const [isCartOpen, setIsCartOpen] = useState(false);
+    // const [activeQrProduct, setActiveQrProduct] = useState(null)
   const [copiedNum, setCopiedNum] = useState(false)
   const [copiedMsg, setCopiedMsg] = useState(false)
 
@@ -105,8 +140,8 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
 
   // Jis product par user ne click kiya hai, uske naam aur price ke hisab se text generate hoga
 
-const generatedMessage = activeQrProduct 
-  ? `Hello Team KRISHAVIÁ! 💎✨\n\nI really love your collection on the website and I want to secure my booking for:\n• Product: ${activeQrProduct.name}\n• Price: ${activeQrProduct.sellingPrice}\n\nHere are my delivery details for Drop 01:\n📌 My Name: \n📍 Address: \n📱 Alternative Contact Number:`
+const generatedMessage =  cart.length > 0 
+  ? `Hello Team KRISHAVIÁ! 💎✨\n\nI really love your collection on the website and I want to secure my booking for:\n• Product: ${isCartOpen.name}\n• Price: ${isCartOpen.sellingPrice}\n\nHere are my delivery details for Drop 01:\n📌 My Name: \n📍 Address: \n📱 Alternative Contact Number:`
   : '';
 
 
@@ -124,6 +159,22 @@ const generatedMessage = activeQrProduct
 
   return (
     <>
+          {/* 🛒 आपका एस्थेटिक फ्लोटिंग शॉपिंग बैग */}
+            {/* 🛒 आलीशान शैम्पेन गोल्ड ग्लो बॉर्डर वाला शॉपिंग बैग बटन */}
+      <div className="mt-8 flex justify-center">
+        <button
+          type="button"
+          onClick={() => setIsCartOpen(true)}
+          className="fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#232323] text-white px-5 py-3.5 text-xs font-bold uppercase tracking-widest border border-[#C5A880] shadow-[0_0_15px_rgba(197,168,128,0.25)] hover:bg-black active:scale-95 transition-all duration-200"
+        >
+          <span>🛒 SHOPPING BAG</span>
+          <span className="bg-white text-black px-2 py-0.5 text-[10px] font-extrabold rounded-none">
+            {cart.length}
+          </span>
+        </button>
+      </div>
+
+
       <section id="collection" className="border-y border-[#2C2C2C]/10">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="mb-10 border-b border-[#2C2C2C]/10 pb-8 sm:mb-12">
@@ -169,7 +220,8 @@ const generatedMessage = activeQrProduct
                 checkoutUnlocked={checkoutUnlocked}
                 locationArea={locationArea}
                 onRequireLocation={onRequireLocation}
-                setActiveQrProduct={setActiveQrProduct}
+                // setActiveQrProduct={setActiveQrProduct}
+                 setCart={setCart} 
               />
             ))}
           </div>
@@ -190,64 +242,77 @@ const generatedMessage = activeQrProduct
             {/* 🎯 USER PERSPECTIVE SMART POP-UP MODAL */}
      {/* 🎯 PREMIUM MINIMALIST POP-UP MODAL */}
 {/* 🎯 KRISHAVIÁ PREMIUM MINIMAL POP-UP (RESPONSIVE & FIXED HEIGHT) */}
-{activeQrProduct && (
+{isCartOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
     <div className="bg-white p-5 rounded-none max-w-sm w-full shadow-2xl relative border border-gray-100 font-sans max-h-[90vh] overflow-y-auto flex flex-col justify-between">
       
       <div>
-        {/* Top Close Cross */}
         <button 
-          onClick={() => setActiveQrProduct(null)}
+          onClick={() => setIsCartOpen(false)}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-sm p-1 transition-colors"
         >
           ✕
         </button>
 
-        {/* Brand Header */}
         <h3 className="font-serif text-xs font-bold tracking-widest text-[#2C2C2C] text-center mb-4 uppercase">
           SECURE YOUR BOOKING 💎
         </h3>
 
-        {/* Combined Informative Container */}
         <div className="mb-4 bg-gray-50/70 p-3 rounded-none border border-gray-200/40">
           <div className="flex items-center justify-between border-b border-gray-200/60 pb-2 mb-2">
             <span className="text-[9px] font-bold tracking-widest text-gray-400 uppercase">WhatsApp Order To</span>
-            <span className="font-mono text-xs font-bold text-gray-800 tracking-wide">{displayWhatsAppNumber}</span>
+            <span className="font-mono text-xs font-bold text-gray-800 tracking-wide">+91 9131767938</span>
           </div>
           
           <span className="block text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-1">
             Order Template Text
           </span>
-          <div className="text-[11px] text-gray-600 bg-white p-2.5 rounded-none border border-gray-100 whitespace-pre-line text-left leading-relaxed max-h-[140px] overflow-y-auto font-medium tracking-wide">
-            {`Hello Team KRISHAVIÁ! 💎✨\n\nI want to secure my booking for:\n• Product: ${activeQrProduct.name}\n• Price: ${activeQrProduct.sellingPrice}\n\nDelivery Details:\n📌 My Name:\n📍 Address:\n📱 Alternative Contact:`}
+          <div className="text-[11px] text-gray-600 bg-white p-2.5 rounded-none border border-gray-100 whitespace-pre-line text-left leading-relaxed max-h-[180px] overflow-y-auto font-medium tracking-wide">
+            {cart.length === 0 ? (
+              "आपका शॉपिंग बैग खाली है! कृपया कुछ प्रोडक्ट्स जोड़ें। 🛍️"
+            ) : (
+              `Hello Team KRISHAVIÁ! 💎✨\n\nI want to secure my booking for multiple items:\n` +
+              cart.map((item, idx) => `${idx + 1}. ${item.name} - ${item.sellingPrice}`).join('\n') +
+              `\n\nTotal Bill Amount: ₹ ${cart.reduce((total, item) => total + parseInt(item.sellingPrice.replace(/[^\d]/g, '') || 0), 0)} 📦\n\nDelivery Details:\n📌 My Name:\n📍 Full Address:\n📱 Alternative Contact Number:`
+            )}
           </div>
         </div>
       </div>
 
-      {/* Action Buttons at Bottom */}
       <div className="flex flex-col gap-1.5 mt-2 shrink-0">
         <button 
+          disabled={cart.length === 0}
           onClick={() => {
-            const combinedText = `ORDER TO: ${displayWhatsAppNumber}\n\nHello Team KRISHAVIÁ! 💎✨\n\nI want to secure my booking for:\n• Product: ${activeQrProduct.name}\n• Price: ${activeQrProduct.sellingPrice}\n\nDelivery Details:\n📌 My Name:\n📍 Address:\n📱 Alternative Contact:`;
-            navigator.clipboard.writeText(combinedText);
+            const totalPrice = cart.reduce((total, item) => total + parseInt(item.sellingPrice.replace(/[^\d]/g, '') || 0), 0);
+            const itemsList = cart.map((item, idx) => `${idx + 1}. ${item.name} - ${item.sellingPrice}`).join('\n');
             
-            // Text change logic handles state smoothly instead of harsh windows alert
+            const combinedText = `Hello Team KRISHAVIÁ! 💎✨\n\nI want to secure my booking for multiple items:\n${itemsList}\n\nTotal Bill Amount: ₹ ${totalPrice} 📦\n\nDelivery Details:\n📌 My Name:\n📍 Full Address:\n📱 Alternative Contact Number:`;
+            
+            navigator.clipboard.writeText(combinedText);
             setCopiedMsg(true);
+            
             setTimeout(() => {
               setCopiedMsg(false);
-              setActiveQrProduct(null); // Clipboard dynamic update hone ke baad close
+              setIsCartOpen(false);
+              setCart([]); // ऑर्डर सबमिट होते ही कार्ट खाली
+              localStorage.removeItem('krishavia_cart');
+              window.open("https://wa.me", "_blank"); // सीधे व्हाट्सऐप पर लैंड
             }, 1200);
           }} 
-          className="w-full bg-[#232323] text-white hover:bg-black font-bold py-2.5 text-[10px] tracking-widest uppercase transition-all duration-200 border border-black rounded-none"
+          className={`w-full font-bold py-2.5 text-[10px] tracking-widest uppercase transition-all duration-200 border rounded-none ${cart.length === 0 ? 'bg-gray-300 border-gray-300 text-gray-500 cursor-not-allowed' : 'bg-[#232323] text-white border-black hover:bg-black'}`}
         >
-          {copiedMsg ? '✓ Copied to Clipboard' : '📋 Copy Details & Close'}
+          {copiedMsg ? '✓ Copied & Opening WhatsApp...' : '📋 Copy Details & Close'}
         </button>
         
         <button 
-          onClick={() => setActiveQrProduct(null)} 
-          className="w-full bg-transparent text-gray-400 hover:text-gray-600 font-medium py-1 text-[9px] tracking-widest uppercase transition-all rounded-none"
+          onClick={() => {
+            setCart([]);
+            localStorage.removeItem('krishavia_cart');
+            setIsCartOpen(false);
+          }} 
+          className="w-full bg-transparent text-red-500 hover:text-red-700 font-medium py-1 text-[9px] tracking-widest uppercase transition-all rounded-none mt-1"
         >
-          Cancel
+          Clear Entire Bag 🗑️
         </button>
       </div>
 
