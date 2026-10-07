@@ -139,7 +139,13 @@ export default function ProductGrid({ checkoutUnlocked, locationArea, onRequireL
   }
 
   // Jis product par user ne click kiya hai, uske naam aur price ke hisab se text generate hoga
-
+const handleRemoveItem = (id) => {
+    setCart((prevCart) => {
+      const newCart = prevCart.filter(item => item.id !== id);
+      localStorage.setItem('krishavia_cart', JSON.stringify(newCart));
+      return newCart;
+    });
+  };
 const generatedMessage =  cart.length > 0 
   ? `Hello Team KRISHAVIÁ! 💎✨\n\nI really love your collection on the website and I want to secure my booking for:\n• Product: ${isCartOpen.name}\n• Price: ${isCartOpen.sellingPrice}\n\nHere are my delivery details for Drop 01:\n📌 My Name: \n📍 Address: \n📱 Alternative Contact Number:`
   : '';
@@ -263,18 +269,49 @@ const generatedMessage =  cart.length > 0
             <span className="text-[9px] font-bold tracking-widest text-gray-400 uppercase">WhatsApp Order To</span>
             <span className="font-mono text-xs font-bold text-gray-800 tracking-wide">+91 9131767938</span>
           </div>
+
+                    {/* 🎯 कूरियर टेक्स्ट के ऊपर यह लाइव रिमूव लिस्ट चमकेगी */}
+          {cart.length > 0 && (
+            <div className="mb-3 border-b border-gray-200/60 pb-2">
+              <span className="block text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-1.5 text-left">
+                Review Items (Tap ✕ to Remove)
+              </span>
+              <div className="flex flex-col gap-1.5 max-h-[100px] overflow-y-auto">
+                {cart.map((item) => (
+                  <div key={item.id} className="flex items-center justify-between bg-white border border-gray-100 p-2 text-[10px] font-medium text-gray-700 tracking-wide">
+                    <span className="truncate pr-2">{item.name}</span>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <span className="font-semibold">{item.sellingPrice}</span>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveItem(item.id)}
+                        className="text-red-400 hover:text-red-600 font-bold px-1 transition-colors text-xs"
+                        title="Remove item"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           
           <span className="block text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-1">
             Order Template Text
           </span>
           <div className="text-[11px] text-gray-600 bg-white p-2.5 rounded-none border border-gray-100 whitespace-pre-line text-left leading-relaxed max-h-[180px] overflow-y-auto font-medium tracking-wide">
-            {cart.length === 0 ? (
-              "आपका शॉपिंग बैग खाली है! कृपया कुछ प्रोडक्ट्स जोड़ें। 🛍️"
-            ) : (
-              `Hello Team KRISHAVIÁ! 💎✨\n\nI want to secure my booking for multiple items:\n` +
-              cart.map((item, idx) => `${idx + 1}. ${item.name} - ${item.sellingPrice}`).join('\n') +
-              `\n\nTotal Bill Amount: ₹ ${cart.reduce((total, item) => total + parseInt(item.sellingPrice.replace(/[^\d]/g, '') || 0), 0)} 📦\n\nDelivery Details:\n📌 My Name:\n📍 Full Address:\n📱 Alternative Contact Number:`
-            )}
+            <div className="text-[11px] text-gray-600 bg-white p-2.5 rounded-none border border-gray-100 whitespace-pre-line text-left leading-relaxed max-h-[140px] overflow-y-auto font-medium tracking-wide">
+  {cart.length === 0 ? (
+    "Your shopping bag is currently empty! Please add some aesthetic pieces to start booking. 🛍️✨"
+  ) : (
+    `Hello Team KRISHAVIÁ! 💎✨\n\nI really love your collection on the website and I want to secure my booking for multiple items:\n` +
+    cart.map((item, idx) => `${idx + 1}. ${item.name} - ${item.sellingPrice}`).join('\n') +
+    `\n\nTotal Bill Amount: ₹ ${cart.reduce((total, item) => total + parseInt(item.sellingPrice.replace(/[^\d]/g, '') || 0), 0)} 📦\n\nHere are my delivery details for Drop 01:\n📌 My Name:\n📍 Full Address:\n📱 Alternative Contact Number:`
+  )}
+</div>
+
           </div>
         </div>
       </div>
