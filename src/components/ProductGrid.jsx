@@ -250,9 +250,11 @@ const generatedMessage =  cart.length > 0
 {/* 🎯 KRISHAVIÁ PREMIUM MINIMAL POP-UP (RESPONSIVE & FIXED HEIGHT) */}
 {isCartOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
-    <div className="bg-white p-5 rounded-none max-w-sm w-full shadow-2xl relative border border-gray-100 font-sans max-h-[90vh] overflow-y-auto flex flex-col justify-between">
+    {/* 🎯 चौड़ाई को max-w-md कर दिया है ताकि लेआउट दबे नहीं और सुंदर दिखे */}
+    <div className="bg-white p-5 rounded-none max-w-md w-full shadow-2xl relative border border-gray-100 font-sans md:p-6 animate-fadeIn">
       
       <div>
+        {/* क्लोज बटन */}
         <button 
           onClick={() => setIsCartOpen(false)}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-sm p-1 transition-colors"
@@ -260,98 +262,96 @@ const generatedMessage =  cart.length > 0
           ✕
         </button>
 
+        {/* मुख्य हेडर */}
         <h3 className="font-serif text-xs font-bold tracking-widest text-[#2C2C2C] text-center mb-4 uppercase">
           SECURE YOUR BOOKING 💎
         </h3>
 
-        <div className="mb-4 bg-gray-50/70 p-3 rounded-none border border-gray-200/40">
-          <div className="flex items-center justify-between border-b border-gray-200/60 pb-2 mb-2">
-            <span className="text-[9px] font-bold tracking-widest text-gray-400 uppercase">WhatsApp Order To</span>
-            <span className="font-mono text-xs font-bold text-gray-800 tracking-wide">+91 9131767938</span>
-          </div>
-
-                    {/* 🎯 कूरियर टेक्स्ट के ऊपर यह लाइव रिमूव लिस्ट चमकेगी */}
-          {cart.length > 0 && (
-            <div className="mb-3 border-b border-gray-200/60 pb-2">
-              <span className="block text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-1.5 text-left">
-                Review Items (Tap ✕ to Remove)
-              </span>
-              <div className="flex flex-col gap-1.5 max-h-[100px] overflow-y-auto">
-                {cart.map((item) => (
-                  <div key={item.id} className="flex items-center justify-between bg-white border border-gray-100 p-2 text-[10px] font-medium text-gray-700 tracking-wide">
-                    <span className="truncate pr-2">{item.name}</span>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span className="font-semibold">{item.sellingPrice}</span>
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveItem(item.id)}
-                        className="text-red-400 hover:text-red-600 font-bold px-1 transition-colors text-xs"
-                        title="Remove item"
-                      >
-                        ✕
-                      </button>
-                    </div>
+        {/* 🎯 1. रिव्यू आइटम्स लिस्ट - यहाँ ऊपर एकदम साफ़ और मिनिमल ढंग से चमकेगी */}
+        {cart.length > 0 && (
+          <div className="mb-4">
+            <span className="block text-[10px] font-bold tracking-widest text-[#232323] uppercase mb-2 text-left">
+              🛍️ YOUR SHOPPING BAG (Tap ✕ to remove)
+            </span>
+            <div className="flex flex-col gap-1.5 max-h-[120px] overflow-y-auto">
+              {cart.map((item) => (
+                <div key={item.id} className="flex items-center justify-between bg-white border border-gray-100 p-2 text-[10px] font-medium text-gray-700 tracking-wide">
+                  <span className="truncate pr-2">{item.name}</span>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="font-semibold">{item.sellingPrice}</span>
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveItem(item.id)}
+                      className="text-red-400 hover:text-red-600 font-bold px-1 transition-colors text-xs"
+                      title="Remove item"
+                    >
+                      ✕
+                    </button>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          )}
-
-          
-          <span className="block text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-1">
-            Order Template Text
-          </span>
-          <div className="text-[11px] text-gray-600 bg-white p-2.5 rounded-none border border-gray-100 whitespace-pre-line text-left leading-relaxed max-h-[180px] overflow-y-auto font-medium tracking-wide">
-            <div className="text-[11px] text-gray-600 bg-white p-2.5 rounded-none border border-gray-100 whitespace-pre-line text-left leading-relaxed max-h-[140px] overflow-y-auto font-medium tracking-wide">
-  {cart.length === 0 ? (
-    "Your shopping bag is currently empty! Please add some aesthetic pieces to start booking. 🛍️✨"
-  ) : (
-    `Hello Team KRISHAVIÁ! 💎✨\n\nI really love your collection on the website and I want to secure my booking for multiple items:\n` +
-    cart.map((item, idx) => `${idx + 1}. ${item.name} - ${item.sellingPrice}`).join('\n') +
-    `\n\nTotal Bill Amount: ₹ ${cart.reduce((total, item) => total + parseInt(item.sellingPrice.replace(/[^\d]/g, '') || 0), 0)} 📦\n\nHere are my delivery details for Drop 01:\n📌 My Name:\n📍 Full Address:\n📱 Alternative Contact Number:`
-  )}
-</div>
-
           </div>
+        )}
+
+        {/* 🎯 2. ऑर्डर टेम्पलेट टेक्स्ट बॉक्स - डबल div एरर पूरी तरह फ़िक्स कर दिया है */}
+        <div className="mb-4">
+          <span className="block text-[9px] font-bold tracking-widest text-gray-400 uppercase mb-1 text-left">
+            Order Summary Template
+          </span>
+          <div className="text-[11px] text-gray-600 bg-white p-2.5 rounded-none border border-gray-100 whitespace-pre-line text-left leading-relaxed max-h-[140px] overflow-y-auto font-medium tracking-wide">
+            {cart.length === 0 ? (
+              "Your shopping bag is currently empty! Please add some aesthetic pieces to start booking. 🛍️✨"
+            ) : (
+              `Hello Team KRISHAVIÁ! 💎✨\n\nI really love your collection on the website and I want to secure my booking for multiple items:\n` +
+              cart.map((item, idx) => `${idx + 1}. ${item.name} - ${item.sellingPrice}`).join('\n') +
+              `\n\nTotal Bill Amount: ₹ ${cart.reduce((total, item) => total + parseInt(item.sellingPrice.replace(/[^\d]/g, '') || 0), 0)} 📦\n\nHere are my delivery details for Drop 01:\n📌 My Name:\n📍 Full Address:\n📱 Alternative Contact Number:`
+            )}
+          </div>
+        </div>
+
+        {/* 🎯 3. नया सिंपल यूज़र-फ्रेंडली मैसेज गाइड - 'Step 3' टेक्स्ट पूरी तरह हटा दिया है */}
+        <div className="mt-4 border-t border-gray-100 pt-3 text-left px-1">
+          <p className="text-[11px] text-gray-600 leading-relaxed tracking-wide font-medium">
+            ✨ To place your order, just copy these details using the button below and paste them to our official WhatsApp number:
+            <span className="block font-mono font-extrabold text-sm text-black bg-gray-50 border border-gray-200 p-2.5 mt-2 text-center select-all cursor-pointer tracking-wider">
+              9131767938
+            </span>
+          </p>
         </div>
       </div>
 
-      <div className="flex flex-col gap-1.5 mt-2 shrink-0">
-       <button 
-  disabled={cart.length === 0}
-  onClick={() => {
-    // 1. पूरा कूरियर फॉर्म टेक्स्ट अपने आप कॉपी होगा
-    navigator.clipboard.writeText(generatedMessage);
-    setCopiedMsg(true);
-    
-    // 2. 1.2 सेकंड का समय देकर पॉप-अप बंद होगा और सीधे व्हाट्सऐप ऐप खुलेगा
-    setTimeout(() => {
-      setCopiedMsg(false);
-      setIsCartOpen(false);
-      setCart([]); // ऑर्डर होते ही कार्ट खाली
-      localStorage.removeItem('krishavia_cart');
-      
-      // 🎯 यह जादुई ऑफिशियल गेटवे बिना नंबर सेव कराए सीधे व्हाट्सऐप ऐप खोल देगा!
-      window.open("https://whatsapp.com", "_blank");
-    }, 1200);
-  }} 
-  className={`w-full font-bold py-2.5 text-[10px] tracking-widest uppercase transition-all duration-200 border rounded-none ${
-    cart.length === 0 
-      ? 'bg-gray-300 border-gray-300 text-gray-500 cursor-not-allowed' 
-      : 'bg-[#232323] text-white border-black hover:bg-black'
-  }`}
->
-  {copiedMsg ? '✓ Copied & Opening WhatsApp...' : '📋 Copy Details & Close'}
-</button>
+      {/* 🎯 नीचे के मुख्य एक्शन बटन्स - डेटा लॉस और फालतू लिंक एरर से 100% सुरक्षित */}
+      <div className="flex flex-col gap-1.5 mt-4 shrink-0">
+        <button 
+          disabled={cart.length === 0}
+          onClick={() => {
+            // 1. पूरा कूरियर फॉर्म टेक्स्ट क्लिपबोर्ड में 100% पक्का कॉपी होगा
+            navigator.clipboard.writeText(generatedMessage);
+            setCopiedMsg(true);
+            
+            // 2. सिर्फ बटन का टेक्स्ट बदलेगा और पॉप-अप बंद होगा (कार्ट डेटा 100% सेफ़ रहेगा!)
+            setTimeout(() => {
+              setCopiedMsg(false);
+              setIsCartOpen(false);
+            }, 1200);
+          }} 
+          className={`w-full font-bold py-2.5 text-[10px] tracking-widest uppercase transition-all duration-200 border rounded-none ${
+            cart.length === 0 
+              ? 'bg-gray-300 border-gray-300 text-gray-500 cursor-not-allowed' 
+              : 'bg-[#232323] text-white border-black hover:bg-black active:scale-[0.99]'
+          }`}
+        >
+          {copiedMsg ? '✓ Copied to Clipboard' : '📋 Copy Details & Close'}
+        </button>
 
-        
         <button 
           onClick={() => {
             setCart([]);
             localStorage.removeItem('krishavia_cart');
             setIsCartOpen(false);
           }} 
-          className="w-full bg-transparent text-red-500 hover:text-red-700 font-medium py-1 text-[9px] tracking-widest uppercase transition-all rounded-none mt-1"
+          className="w-full bg-transparent text-red-500 hover:text-red-700 font-medium py-1 text-[9px] tracking-widest uppercase transition-all rounded-none mt-1 text-center"
         >
           Clear Entire Bag 🗑️
         </button>
@@ -360,6 +360,7 @@ const generatedMessage =  cart.length > 0
     </div>
   </div>
 )}
+
 
 
     </>
